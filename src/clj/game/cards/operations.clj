@@ -1460,6 +1460,12 @@
     :async true
     :effect (effect (trash eid target nil))}})
 
+(defcard "ONR Accounts Receivable"
+  {:on-play
+   {:msg "gain 9 [Credits]"
+    :async true
+    :effect (effect (gain-credits eid 9))}})
+
 (defcard "Oversight AI"
   {:on-play {:choices {:card #(and (ice? %)
                                    (not (rezzed? %))
