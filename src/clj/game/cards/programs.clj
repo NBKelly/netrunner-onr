@@ -1843,6 +1843,19 @@
                        :req (req (some #{target} (:hosted card)))
                        :value -1}]})
 
+(defcard "ONR AI Boon"
+  {:abilities [(break-sub 1 1 "Sentry")
+               (strength-pump 1 1)]
+   :events [{:event :run
+             :msg (msg "roll a die (1d6) to determine the Strength of AI Boon")
+             :effect (req (let [roll (inc (rand-int 6))]
+                            (continue-ability
+                             state :runner
+                             {:effect (effect (pump card roll :end-of-run))
+                              :msg (msg (str "used AI Boon to set the base strength of AI Boon to " roll))
+                              }
+                             card nil)))}]})
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"
