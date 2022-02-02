@@ -1,3 +1,4 @@
+NEEDS TESTS:
 ONR "Armadillo" Armored Road Home (needs tests - see crash space)
 ONR "Drifter" Mobile Environment (needs tests)
 ONR "Green Knight" Surge Buffers (needs tests - prevents 1 net)
@@ -6,6 +7,9 @@ ONR Afreet (tests see dinosaurus and leprechaun)
 ONR AI Chief Financial Officer (tests see levy AR lab access)
 ONR Annual Reviews (tests - see ANR Anonymous Tip)
 ONR Antiquated Interface Routines (tests - see midori, lag time)
+ONR Armored Fridge (tests - see plascrete)
+ONR Artemis 2020 (tests - see any console, multithreader)
+ONR Artificial Security Directors (for tests, see sansan city grid)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

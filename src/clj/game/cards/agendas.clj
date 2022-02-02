@@ -1144,7 +1144,13 @@
                 :msg "Shuffle HQ & Archives into R&D, then draw 5 cards"                     
                 :async true
                 :effect (effect (shuffle-into-deck :hand :discard)
-                                 (draw eid 5))}]})
+                                (draw eid 5))}]})
+
+(defcard "ONR Artificial Security Directors"
+  {:constant-effects [{:type :advancement-requirement
+                       :req (req (and (agenda? target)
+                                      (has-subtype? target "Black Ops")))
+                       :value -1}]})
 
 (defcard "Paper Trail"
   {:on-score

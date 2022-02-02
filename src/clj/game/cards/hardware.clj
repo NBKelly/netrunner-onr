@@ -1313,6 +1313,21 @@
                 :once :per-turn
                 :effect (effect (damage-prevent :net 1))}]})
 
+(defcard "ONR Armored Fridge"
+  {:data {:counter {:power 7}}
+   :interactions {:prevent [{:type #{:meat}
+                             :req (req true)}]}
+   :events [(trash-on-empty :power)]
+   :abilities [{:cost [:power 1]
+                :msg "prevent 1 meat damage"
+                :effect (req (damage-prevent state side :meat 1))}]})
+
+(defcard "ONR Artemis 2020"
+  {:constant-effects [(mu+ 2)]
+   :recurring 2
+   :interactions {:pay-credits {:req (req (and (= :ability (:source-type eid))
+                                               (program? target)))
+                                :type :recurring}}})
 
 (defcard "Pantograph"
   (let [install-ability
