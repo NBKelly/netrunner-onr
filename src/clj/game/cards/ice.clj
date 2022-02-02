@@ -2636,7 +2636,17 @@
                       :duration :end-of-encounter
                       :req (req (same-card? encountered-ice target))
                       :value true})))}]))}]})
-  
+
+(defcard "ONR Canis Major"
+  {:subroutines [{:label "Give +2 strength to all ice for the remainder of the run"
+                  :msg "give +2 strength to all ice for the remainder of the run"
+                  :effect (effect (pump-all-ice 2 :end-of-run))}]})
+
+(defcard "ONR Canis Minor"
+  {:subroutines [{:label "Give +1 strength to all ice for the remainder of the run"
+                  :msg "give +1 strength to all ice for the remainder of the run"
+                  :effect (effect (pump-all-ice 1 :end-of-run))}]})
+
 (defcard "Orion"
   (space-ice trash-program-sub
              (resolve-another-subroutine)

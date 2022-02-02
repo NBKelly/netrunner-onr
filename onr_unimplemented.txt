@@ -55,8 +55,6 @@ DOABLE:
   ONR Diplomatic Immunity (see blank card)
 
 EASY:
-  ONR Canis Major (ref: red tape)
-  ONR Canis Minor (ref: red tape)
   ONR Chester Mix (ref: jinja, akitanaro)
   ONR Chicago Branch (ref: PAD Factory)
   ONR Chimera (ref: aggressive secretery, shock!)
@@ -95,6 +93,6 @@ EASY:
   ONR Detroit Police Contract (see SSL Endorsement)
   ONR Dieter Esslin (shock!)
   
-continue from: base/bolter cluster (search for 'cannot break')
+continue from: base/chester mix (watanabe, jinja)
 scan from: base/Disenfectant, Inc.
 

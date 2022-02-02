@@ -18,6 +18,9 @@ ONR ONR Bodyweight [TM] Synthetic Blood
 ONR Bolter Cluster (see inazuma)
 ONR Braindance Campaign
 ONR Broker (see kati jones)
+
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
 ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)
+ONR Canis Major (doesn't work if ice was unrezzed, doesn't apply on encounter)
+ONR Canis Minor (doesn't work if ice was unrezzed, doesn't apply on encounter)
