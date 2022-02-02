@@ -4,5 +4,9 @@ ONR "Green Knight" Surge Buffers (needs tests - prevents 1 net)
 ONR Accounts Receivable (tests - see hedge fund)
 ONR Afreet (tests see dinosaurus and leprechaun)
 ONR AI Chief Financial Officer (tests see levy AR lab access)
-ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)
 ONR Annual Reviews (tests - see ANR Anonymous Tip)
+ONR Antiquated Interface Routines (tests - see midori, lag time)
+
+PARTIAL IMPLEMENTATIONS:
+ONR Anonymous Tip (set choices - require black ice exists to play)
+ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)

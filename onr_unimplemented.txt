@@ -6,12 +6,18 @@ LINK CARDS:
 FLOATING EFFECTS:
   ONR ACME Savings and Loan
 
+PAY AGENDA POINTS:
+  ONR Arasaka Portable Prototype
+
 ONR TOKEN CARDS:
   ONR Aardvark
+
+ODD CARDS:
+  ONR Arasaka Owns You
 
 DOABLE:
   ONR All-Nighter (note - doppleganger, always have a backup plan)
   
   
-continue from: base/All-Nighter
+continue from: base/Armored Fridge (see plascrete carapace)
 
