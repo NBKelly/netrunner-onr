@@ -2182,6 +2182,12 @@
                           )}
     :effect (effect (derez target))}})
 
+(defcard "ONR Bodyweight [TM] Synthetic Blood"
+  {:on-play
+   {:msg "draw 5 cards"
+    :async true
+    :effect (effect (draw eid 5))}})
+
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
                    :choices (req runnable-servers)

@@ -1877,6 +1877,11 @@
                                 {:msg (msg (str "to roll " roll))}
                                 card nil))))}]}))
 
+(defcard "ONR Black Dahlia"
+  (auto-icebreaker
+   {:abilities [(break-sub 2 1 "Sentry")
+                (strength-pump 2 1)]}))
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"

@@ -13,7 +13,8 @@ ONR Artificial Security Directors (for tests, see sansan city grid)
 ONR Banpei (literally just rototurret)
 ONR Bartmoss Memorial Icebreaker (tests are hard, card is random)
 ONR BBS Whispering Campaign (see regolith)
-
+ONR Bodyweight [TM] Synthetic Blood (see diesel)
+ONR ONR Bodyweight [TM] Synthetic Blood
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
 ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)

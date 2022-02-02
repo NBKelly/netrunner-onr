@@ -1159,6 +1159,11 @@
              :msg "do 1 additional meat damage"
              :effect (effect (damage-bonus :meat 1))}]})
 
+(defcard "ONR Black Ice Quality Assurance"
+  {:constant-effects [{:type :ice-strength
+                       :req (req (has-subtype? target "Black Ice"))
+                       :value 2}]})
+
 (defcard "Paper Trail"
   {:on-score
    {:trace
