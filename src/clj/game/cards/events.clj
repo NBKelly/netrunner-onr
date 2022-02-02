@@ -2172,6 +2172,16 @@
                                 (damage-prevent :meat 3)
                                 (damage-prevent :brain 3))}]})
 
+(defcard "ONR Anonymous Tip"
+  {:on-play
+   {;;:req (req (some #{:hq} (:successful-run runner-reg)))
+    :msg (msg "derez " (:title target))
+    :choices {:card #(and (ice? %)
+                          (rezzed? %)
+                          (has-subtype? % "Black Ice")
+                          )}
+    :effect (effect (derez target))}})
+
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
                    :choices (req runnable-servers)
