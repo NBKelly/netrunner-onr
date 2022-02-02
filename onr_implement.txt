@@ -10,6 +10,9 @@ ONR Antiquated Interface Routines (tests - see midori, lag time)
 ONR Armored Fridge (tests - see plascrete)
 ONR Artemis 2020 (tests - see any console, multithreader)
 ONR Artificial Security Directors (for tests, see sansan city grid)
+ONR Banpei (literally just rototurret)
+ONR Bartmoss Memorial Icebreaker (tests are hard, card is random)
+ONR BBS Whispering Campaign (see regolith)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

@@ -1844,17 +1844,38 @@
                        :value -1}]})
 
 (defcard "ONR AI Boon"
-  {:abilities [(break-sub 1 1 "Sentry")
-               (strength-pump 1 1)]
-   :events [{:event :run
-             :msg (msg "roll a die (1d6) to determine the Strength of AI Boon")
-             :effect (req (let [roll (inc (rand-int 6))]
-                            (continue-ability
-                             state :runner
-                             {:effect (effect (pump card roll :end-of-run))
-                              :msg (msg (str "used AI Boon to set the base strength of AI Boon to " roll))
-                              }
-                             card nil)))}]})
+  (auto-icebreaker
+   {:abilities [(break-sub 1 1 "Sentry")
+                (strength-pump 1 1)]
+    :events [{:event :run
+              :msg (msg "roll a die (1d6) to determine the Strength of AI Boon")
+              :effect (req (let [roll (inc (rand-int 6))]
+                             (continue-ability
+                              state :runner
+                              {:effect (effect (pump card roll :end-of-run))
+                               :msg (msg (str "used AI Boon to set the base strength of AI Boon to " roll))
+                               }
+                             card nil)))}]}))
+
+(defcard "ONR Bartmoss Memorial Icebreaker"
+  (auto-icebreaker
+   {:abilities [(break-sub 1 1)
+                (strength-pump 1 1)]
+    :events [{:event :pass-ice
+              :req (req (any-subs-broken-by-card? (:ice context) card))
+              :msg (msg (str "roll a die to determine if they must trash Bartmoss Memorial Icebreaker"))
+              :async true
+              :effect (req (let [roll (inc (rand-int 6))]
+                             (if (= 1 roll)
+                               (continue-ability
+                                state :runner
+                                {:msg (msg (str "to roll 1, and must trash it"))
+                                 :effect (effect (trash eid card {:cause :runner-ability}))}
+                                card nil)
+                               (continue-ability
+                                state :runner
+                                {:msg (msg (str "to roll " roll))}
+                                card nil))))}]}))
 
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub

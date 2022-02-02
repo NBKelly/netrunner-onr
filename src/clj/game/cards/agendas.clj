@@ -1152,6 +1152,13 @@
                                       (has-subtype? target "Black Ops")))
                        :value -1}]})
 
+(defcard "ONR Bioweapons Engineering"
+  {:events [{:event :pre-damage
+             :req (req (and (= target :meat)
+                            (= side :corp)))
+             :msg "do 1 additional meat damage"
+             :effect (effect (damage-bonus :meat 1))}]})
+
 (defcard "Paper Trail"
   {:on-score
    {:trace

@@ -2612,6 +2612,10 @@
    :subroutines [end-the-run
                  end-the-run]})
 
+(defcard "ONR Banpei"
+  {:subroutines [trash-program-sub
+                 end-the-run]})
+
 (defcard "Orion"
   (space-ice trash-program-sub
              (resolve-another-subroutine)

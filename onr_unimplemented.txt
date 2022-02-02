@@ -2,6 +2,10 @@ LINK CARDS:
   ONR Access through Alpha
   ONR Access through Arasaka
   ONR Access through Kiribati
+  ONR Back Door to Hilliard
+  ONR Back Door to Orbital Air
+  ONR Baedeker's Net Map
+  ONR Bakdoor [TM]
 
 FLOATING EFFECTS:
   ONR ACME Savings and Loan
@@ -14,10 +18,15 @@ ONR TOKEN CARDS:
 
 ODD CARDS:
   ONR Arasaka Owns You
+  ONR Asp (see excalibur - flag needs to exist until the runner clicks for a credit)
 
+REQUIRES ONR TRACES:
+  ONR Audit of Call Records (need to be able to count runs made last turn)
+  
 DOABLE:
   ONR All-Nighter (note - doppleganger, always have a backup plan)
-  
+  ONR Aujourd'Oui (look at frantic coding + bacterial programming)
+  ONR Ball and Chain (look at toll booth, armored servers?)
   
 continue from: base/Asp (might be funny)
 

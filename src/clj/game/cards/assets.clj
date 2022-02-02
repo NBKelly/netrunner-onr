@@ -1475,6 +1475,19 @@
      :abilities [ability]
      :events [(assoc ability :event :corp-turn-begins)]}))
 
+(defcard "ONR BBS Whispering Campaign"
+  {:data {:counter {:credit 16}}
+   :events [(trash-on-empty :credit)]
+   :abilities [{:label "Take 2 [Credits] from BBS Whispering Campaign"
+                :cost [:click 1]
+                :keep-open :while-clicks-left
+                :msg (msg "gain " (min 2 (get-counters card :credit)) " [Credits]")
+                :async true
+                :effect (req (let [credits (min 2 (get-counters card :credit))]
+                               (wait-for (gain-credits state :corp (make-eid state eid) credits)
+                                         (add-counter state side card :credit (- credits) {:placed true})
+                                         (effect-completed state side eid))))}]})
+
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)
