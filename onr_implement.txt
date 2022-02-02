@@ -15,6 +15,9 @@ ONR Bartmoss Memorial Icebreaker (tests are hard, card is random)
 ONR BBS Whispering Campaign (see regolith)
 ONR Bodyweight [TM] Synthetic Blood (see diesel)
 ONR ONR Bodyweight [TM] Synthetic Blood
+ONR Bolter Cluster (see inazuma)
+ONR Braindance Campaign
+ONR Broker (see kati jones)
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
 ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)

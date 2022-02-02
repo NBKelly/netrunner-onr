@@ -12,19 +12,34 @@ FLOATING EFFECTS:
 
 PAY AGENDA POINTS:
   ONR Arasaka Portable Prototype
-
+  ONR Corporate Ally
+  ONR Databroker
+  
 ONR TOKEN CARDS:
   ONR Aardvark
   ONR Boardwalk
+  ONR Butcher Boy
+  ONR Cascade
+  ONR Cerberus
+  ONR Cockroach
+  ONR Crybaby
+  ONR Data Raven
+  ONR Deal with Militech
+  ONR Deep Thought
   
 ODD CARDS:
   ONR Arasaka Owns You
   ONR Asp (see excalibur - flag needs to exist until the runner clicks for a credit)
   ONR Bizarre Encryption Scheme (idk how on earth to do this?)
-
+  ONR Code Viral Cache (prevent-remove-virus-counter)
+  ONR Corporate Retreat (blank card trigger)
+  ONR Crash Everett, Inventive Fixer
+  ONR Data Fort Reclamation (tmp credits)
+  
 REQUIRES ONR TRACES:
   ONR Audit of Call Records (need to be able to count runs made last turn)
   ONR Blood Cat
+  ONR Chance Observation (ref: SEA SourcE)
   
 DOABLE:
   ONR All-Nighter (note - doppleganger, always have a backup plan)
@@ -32,6 +47,54 @@ DOABLE:
   ONR Ball and Chain (look at toll booth, armored servers?)
   ONR Blink (needs to find a way to have the "restrict to 1 attempt per sub" ability)
   ONR Bodyweight [TM] Data Crèche (doppelganger)
+  ONR City Surveillance (zaibatsu loyalty, city surveillance, cpc generator)
+  ONR Cloak (req not noisy)
+  ONR Corporate Downsizing (celeb gift + drudge work)
+  ONR Data Masons (akitanaro, cyberwalls)  
+  ONR Dedicated Response Team (snare + is-tagged?)
+  ONR Diplomatic Immunity (see blank card)
+
+EASY:
+  ONR Canis Major (ref: red tape)
+  ONR Canis Minor (ref: red tape)
+  ONR Chester Mix (ref: jinja, akitanaro)
+  ONR Chicago Branch (ref: PAD Factory)
+  ONR Chimera (ref: aggressive secretery, shock!)
+  ONR Cinderella (ref: flare)
+  ONR Closed Accounts (ref closed accounts)
+  ONR Clown (ref ice carver)
+  ONR Code Corpse (ref NEXT Diamond)
+  ONR Codecracker
+  ONR Codeslinger
+  ONR Core Command: Jettison Ice (ref emergency shutdown, brute force hack)
+  ONR Corolla Speed Chip (ref dyson fractal)
+  ONR Corporate Boon (ref elective upgrades?)
+  ONR Corporate Coup (regolith, but don't trash)
+  ONR Corporate Detective Agency (there is a card that does this)
+  ONR Corporate Negotiating Center (celeb gift + start of turn)  
+  ONR Corporate War (ref corp war)
+  ONR Corprunner's Shattered Remains (shattered remains)
+  ONR Cortical Scanner (spiderweb)
+  ONR Cortical Scrub (viktor 1.0)
+  ONR Cowboy Sysop (it must exist)
+  ONR Crystal Palace Station Grid (ref midway station)
+  ONR Crystal Wall (ice wall)
+  ONR Custodial Position (Makers Eye)
+  ONR Cyfermaster
+  ONR D'arc Knight (rototurret)
+  ONR Danshi's Second ID (see forger)
+  ONR Data Darts (ref neural katana, that other ice)
+  ONR Data Naga (Rototurret)
+  ONR Data Wall (ice wall)
+  ONR Data Wall 2.0 (ice wall)
+  ONR Datapool (R) by Zetatech (big brother)
+  ONR Day Shift (green level clearance?)
+  ONR Department of Truth Enhancement (See kati)
+  ONR Dermatech Bodyplating (see muresh)
+  ONR Desperate Competitor (see notoriety, archivist)
+  ONR Detroit Police Contract (see SSL Endorsement)
+  ONR Dieter Esslin (shock!)
   
 continue from: base/bolter cluster (search for 'cannot break')
+scan from: base/Disenfectant, Inc.
 

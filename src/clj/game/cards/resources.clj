@@ -1841,6 +1841,19 @@
                 :async true
                 :effect (effect (trash-cards :corp eid (take 2 (shuffle (:hand corp)))))}]})
 
+(defcard "ONR Broker"
+  {:abilities [{:cost [:click 1]
+                :msg "store 3 [Credits]"
+                :once :per-turn
+                :effect (effect (add-counter card :credit 3))}
+               {:cost [:click 1]
+                :msg (msg "gain " (get-counters card :credit) " [Credits]")
+                :once :per-turn
+                :label "Take all credits"
+                :async true
+                :effect (effect (add-counter card :credit (- (get-counters card :credit)))
+                                (gain-credits eid (get-counters card :credit)))}]})
+
 (defcard "Oracle May"
   {:abilities [{:cost [:click 1]
                 :label "name and reveal a card"

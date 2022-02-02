@@ -1488,6 +1488,9 @@
                                          (add-counter state side card :credit (- credits) {:placed true})
                                          (effect-completed state side eid))))}]})
 
+(defcard "ONR Braindance Campaign"
+  (campaign 12 2))
+
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)
