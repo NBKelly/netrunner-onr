@@ -1466,6 +1466,12 @@
     :async true
     :effect (effect (gain-credits eid 9))}})
 
+(defcard "ONR Annual Reviews"
+  {:on-play
+   {:msg "draw 3 cards"
+    :async true
+    :effect (effect (draw eid 3))}})
+
 (defcard "Oversight AI"
   {:on-play {:choices {:card #(and (ice? %)
                                    (not (rezzed? %))
