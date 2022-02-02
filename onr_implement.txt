@@ -1,0 +1,6 @@
+ONR "Armadillo" Armored Road Home (needs tests - see crash space)
+ONR "Drifter" Mobile Environment (needs tests)
+ONR "Green Knight" Surge Buffers (needs tests - prevents 1 net)
+ONR Accounts Receivable (tests - see hedge fund)
+ONR Afreet (tests see dinosaurus and leprechaun)
+ONR AI Chief Financial Officer (tests see levy AR lab access)
