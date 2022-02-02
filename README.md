@@ -1,3 +1,13 @@
+# Adjustments for ONR/netrunner 1996
+
+All ONR cards will have their titles prefaced by "ONR ", like `ONR Accounts Receivable`. 
+
+All ONR cards have unique subtypes, like `onr-asset` or `onr-black-ice`. 
+
+As I work, I'm trying to put cards in baskets: easy to implement, things that will take work, and things that require an actual game system rewrite.
+
+Implementation status of ONR cards can be found in 'implement' and 'unimplemented' text files, as I slowly work through them (in order).
+
 # Android: Netrunner in the browser
 
 [![Build status](https://circleci.com/gh/mtgred/netrunner/tree/master.svg?style=shield)](https://circleci.com/gh/mtgred/netrunner)
