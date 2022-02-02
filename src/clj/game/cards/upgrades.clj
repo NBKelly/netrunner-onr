@@ -1103,6 +1103,12 @@
               {:event :access
                :effect (req (clear-persistent-flag! state side card :can-steal))}]}))
 
+(defcard "ONR Antiquated Interface Routines"
+  {:constant-effects [{:type :ice-strength
+                       :req (req (and (ice? target)
+                                      (= (card->server state card) (card->server state target))))
+                       :value 1}]})
+
 (defcard "Overseer Matrix"
   (let [ability {:event :runner-trash
                  :once-per-instance true
