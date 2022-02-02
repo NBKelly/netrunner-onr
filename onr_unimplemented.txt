@@ -1,9 +1,17 @@
-ONR Aardvark
-ONR Access through Alpha
-ONR Access through Arasaka
-ONR Access through Kiribati
-ONR ACME Savings and Loan
-ONR AI Boon
+LINK CARDS:
+  ONR Access through Alpha
+  ONR Access through Arasaka
+  ONR Access through Kiribati
 
+FLOATING EFFECTS:
+  ONR ACME Savings and Loan
+
+ONR TOKEN CARDS:
+  ONR Aardvark
+
+DOABLE:
+  ONR All-Nighter (note - doppleganger, always have a backup plan)
+  
+  
 continue from: base/All-Nighter
 
