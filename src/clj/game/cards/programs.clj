@@ -1821,6 +1821,28 @@
                                                                            (all-active-installed state :runner)))))})
                                 (strength-pump 3 3)]}))
 
+(defcard "ONR Afreet"
+  {:abilities [{:label "Install a program on Afreet"
+               :cost [:click 1]
+               :prompt "Choose a program in your Grip to install on Afreet"
+               :choices {:req (req (and (program? target)
+                                        (runner-can-install? state side target false)
+                                        (in-hand? target)))}
+               :msg (msg "host " (:title target))
+               :async true
+               :effect (effect (runner-install eid target {:host-card card :no-mu true}))}
+              {:label "Host an installed program on Afreet"
+               :prompt "Choose an installed program to host on Afreet"
+               :choices {:card #(and (program? %)
+                                     (installed? %))}
+               :msg (msg "host " (:title target))
+               :effect (effect (host card target)
+                               (unregister-effects-for-card target #(= :used-mu (:type %)))
+                               (update-mu))}]
+   :constant-effects [{:type :breaker-strength
+                       :req (req (some #{target} (:hosted card)))
+                       :value -1}]})
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"
