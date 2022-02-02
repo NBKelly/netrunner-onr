@@ -1286,6 +1286,34 @@
                                                (same-card? card (:host target))))
                                 :type :recurring}}})
 
+(defcard "ONR \"Armadillo\" Armored Road Home"
+  {:interactions {:prevent [{:type #{:meat}
+                             :req (req true)}]
+                  :pay-credits {:req (req (or (= :remove-tag (:source-type eid))
+                                              (and (same-card? (:source eid) (:basic-action-card runner))
+                                                   (= 5 (:ability-idx (:source-info eid))))))
+                                :type :recurring}}
+   :recurring 2
+   :abilities [{:label "Trash to prevent up to 3 meat damage"
+                :msg "prevent up to 3 meat damage"
+                :cost [:trash]
+                :effect (effect (damage-prevent :meat 3))}]})
+
+(defcard "ONR \"Drifter\" Mobile Environment"
+  {:interactions {:pay-credits {:req (req (or (= :remove-tag (:source-type eid))
+                                              (and (same-card? (:source eid) (:basic-action-card runner))
+                                                   (= 5 (:ability-idx (:source-info eid))))))
+				:type :recurring}}
+   :recurring 2})
+
+(defcard "ONR \"Green Knight\" Surge Buffers"
+  {:interactions {:prevent [{:type #{:net}
+                             :req (req true)}]}
+   :abilities [{:msg "prevent 1 net damage"
+                :once :per-turn
+                :effect (effect (damage-prevent :net 1))}]})
+
+
 (defcard "Pantograph"
   (let [install-ability
         {:async true
