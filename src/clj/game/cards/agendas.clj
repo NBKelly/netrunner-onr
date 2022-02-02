@@ -1139,6 +1139,13 @@
                    (damage state :corp eid :meat 4 {:card card})
                    (gain-tags state :corp eid 1)))}})
 
+(defcard "ONR AI Chief Financial Officer"
+  {:abilities [{:cost [:click 1]
+                :msg "Shuffle HQ & Archives into R&D, then draw 5 cards"                     
+                :async true
+                :effect (effect (shuffle-into-deck :hand :discard)
+                                 (draw eid 5))}]})
+
 (defcard "Paper Trail"
   {:on-score
    {:trace
