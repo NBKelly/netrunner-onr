@@ -40,6 +40,9 @@ ONR Custodial Position (Makers Eye)
 ONR Cyfermaster
 ONR D'arc Knight (rototurret)
 ONR Danshi's Second ID (see forger)
+ONR Data Darts (ref neural katana, that other ice)
+ONR Data Masons (akitanaro, cyberwalls)  
+  
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
 ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)

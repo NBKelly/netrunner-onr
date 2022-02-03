@@ -54,7 +54,6 @@ DOABLE:
   ONR City Surveillance (zaibatsu loyalty, city surveillance, cpc generator)
   ONR Cloak (req not noisy)
   ONR Corporate Downsizing (celeb gift + drudge work)
-  ONR Data Masons (akitanaro, cyberwalls)  
   ONR Dedicated Response Team (snare + is-tagged?)
   ONR Diplomatic Immunity (see blank card)
   ONR Chester Mix (ref: jinja, akitanaro)
@@ -62,7 +61,6 @@ DOABLE:
   ONR Corporate Negotiating Center (celeb gift + start of turn)  
 
 EASY:	  
-  ONR Data Darts (ref neural katana, that other ice)
   ONR Data Naga (Rototurret)
   ONR Data Wall (ice wall)
   ONR Data Wall 2.0 (ice wall)

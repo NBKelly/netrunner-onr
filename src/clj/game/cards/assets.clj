@@ -1547,6 +1547,16 @@
                 :msg (msg "move " (card-str state target) " to HQ")
                 :effect (effect (move target :hand))}]})
 
+(defcard "ONR Data Masons"
+    {:constant-effects [{:type :rez-cost
+                         :req (req (and (ice? target)
+                                        (has-subtype? target "Wall")))
+                         :value -2}
+                        {:type :ice-strength
+                         :req (req (and (ice? target)
+                                        (has-subtype? target "Wall")))
+                         :value 1}]})
+
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)
