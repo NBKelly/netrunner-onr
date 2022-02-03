@@ -61,9 +61,6 @@ DOABLE:
   ONR Corporate Negotiating Center (celeb gift + start of turn)  
 
 EASY:	  
-  ONR Data Naga (Rototurret)
-  ONR Data Wall (ice wall)
-  ONR Data Wall 2.0 (ice wall)
   ONR Datapool (R) by Zetatech (big brother)
   ONR Day Shift (green level clearance?)
   ONR Department of Truth Enhancement (See kati)

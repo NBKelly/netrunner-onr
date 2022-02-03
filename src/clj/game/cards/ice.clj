@@ -2718,6 +2718,15 @@
                       :req (req (same-card? encountered-ice target))
                       :value true})))}]))}]})
 
+(defcard "ONR Data Naga"
+  {:subroutines [trash-program-sub
+                 end-the-run]})
+
+(defcard "ONR Data Wall"
+  {:subroutines [end-the-run]})
+
+(defcard "ONR Data Wall 2.0"
+  {:subroutines [end-the-run]})
 
 (defcard "Orion"
   (space-ice trash-program-sub
