@@ -1194,6 +1194,16 @@
                    (gain-credits state :corp eid 12)
                    (lose-credits state :corp eid :all)))}})
 
+(defcard "ONR Detroit Contract"
+  (let [e {:req (req (pos? (get-counters card :credit)))
+           :msg "gain 2 [Credits]"
+           :async true
+           :effect (req (add-counter state side card :credit -2)
+                        (gain-credits state :corp eid 2))}]
+    {:on-score {:effect (effect (add-counter card :credit 12))
+                :silent (req true)}
+     :events [(assoc e :event :corp-turn-begins)]}))
+
 (defcard "Paper Trail"
   {:on-score
    {:trace

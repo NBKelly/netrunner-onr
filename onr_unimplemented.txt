@@ -9,11 +9,13 @@ LINK CARDS:
 
 FLOATING EFFECTS:
   ONR ACME Savings and Loan
-
+  ONR Emergency Self-Construct (immune to meat, hand size, actions changed)
+  
 PAY AGENDA POINTS:
   ONR Arasaka Portable Prototype
   ONR Corporate Ally
   ONR Databroker
+  ONR Diplomatic Immunity (See papparazi, blank card)
   
 ONR TOKEN CARDS:
   ONR Aardvark
@@ -26,6 +28,8 @@ ONR TOKEN CARDS:
   ONR Data Raven
   ONR Deal with Militech
   ONR Deep Thought
+  ONR Disingectant, Inc (virus on corp)
+  ONR Fair Accompli  
   
 ODD CARDS:
   ONR Arasaka Owns You
@@ -41,9 +45,15 @@ REQUIRES ONR TRACES:
   ONR Blood Cat
   ONR Chance Observation (ref: SEA SourcE)
   ONR Cinderella (ref: flare)
+  ONR Fetch 4.0.1. (hunter)
 
 REQUIRES REGION RULES:
   ONR Crystal Palace Station Grid (ref midway station)
+
+RESTRICTED ACTIONS:
+  ONR Edgrerunner, INc., Temps
+  ONR Fang (easy ice, disable run until ability used on breaker? floating effect?)
+  ONR Fang 2.0 (easy ice, disable run until ability used on breaker? floating effect?)
   
 DOABLE:
   ONR All-Nighter (note - doppleganger, always have a backup plan)
@@ -54,21 +64,47 @@ DOABLE:
   ONR City Surveillance (zaibatsu loyalty, city surveillance, cpc generator)
   ONR Cloak (req not noisy)
   ONR Corporate Downsizing (celeb gift + drudge work)
-  ONR Dedicated Response Team (snare + is-tagged?)
   ONR Diplomatic Immunity (see blank card)
   ONR Chester Mix (ref: jinja, akitanaro)
   ONR Chimera (ref: aggressive secretery, shock!)
   ONR Corporate Negotiating Center (celeb gift + start of turn)  
-
-EASY:	  
-  ONR Datapool (R) by Zetatech (big brother)
-  ONR Day Shift (green level clearance?)
-  ONR Department of Truth Enhancement (See kati)
-  ONR Dermatech Bodyplating (see muresh)
   ONR Desperate Competitor (see notoriety, archivist)
-  ONR Detroit Police Contract (see SSL Endorsement)
-  ONR Dieter Esslin (shock!)
+
+  ONR Dr. Dreff (see awakening center)
+  ONR Dropp (see crypsis, ?)
+  ONR Encryption Breakthrough (reveal on board x)
+  ONR Expert Schedule Analyzer (see executive wiretaps, post access)
+  ONR False Echo (automate this, see blackguard)
+  ONR Fortress Respecification (escher, but single server)
   
-continue from: base/chester mix (watanabe, jinja)
-scan from: base/Disenfectant, Inc.
+EASY:	  
+  ONR Dogcatcher
+  ONR Dupre
+  ONR Dwarf
+  ONR Edited Shipping Manifests (see siphon)
+  ONR Efficiency Experts (beanstalk)
+  ONR Employee Empowerment  (see CSR campaign, calvin bailey)
+  ONR Encoder, Inc. (see warden fatima)
+  ONR Endless Corridor (see bastion)
+  ONR ESA Contract (calbin bailey)
+  ONR Euromarket Consortium (cybernetics court, bailey)
+  ONR Evil Twin (prevent damage twice, sentry breaker)
+  ONR Executive Extraction (see the other difficulty reducing agenda)
+  ONR Executive Wiretaps (legwork)
+  ONR Experimental AI (see agg-sec)
+  ONR Fall Guy (see decoy)
+  ONR Falsified-Transactions Expert (trick of light)
+  ONR Fatal Attractor (chum)
+  ONR Field Reporter for Ice and Data (corporate insider, but end of turn?)
+  ONR Filter (ice wall)
+  ONR Fire Wall (ice wall)
+  ONR Flak (break AP)
+  ONR Floating Runner BBS (rezeki)
+  ONR Force Shield (prevent 2 net/brain)
+  ONR Forged Activation Orders (forged activation orders)
+  ONR Forgotten Backup Chip (fetch from archives a program - de ja vu?)
+  ONR Fortress Architects (simple)
+
+continue from: base/fragmentation storm
+scan from: base/fragmentation storm
 

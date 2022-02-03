@@ -1337,6 +1337,13 @@
                                                (has-subtype? target "Icebreaker")))
                                 :type :recurring}}})
 
+(defcard "ONR Dermatech Bodyplating"
+  {:interactions {:prevent [{:type #{:meat}
+                             :req (req true)}]}
+   :abilities [{:msg "prevent 1 net damage"
+                :once :per-turn
+                :effect (effect (damage-prevent :meat 1))}]})
+
 (defcard "Pantograph"
   (let [install-ability
         {:async true
