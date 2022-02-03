@@ -1472,6 +1472,13 @@
     :async true
     :effect (effect (draw eid 3))}})
 
+(defcard "ONR Closed Accounts"
+  {:on-play
+   {:req (req tagged)
+    :msg (msg "force the Runner to lose all " (:credit runner) " [Credits]")
+    :async true
+    :effect (effect (lose-credits :runner eid :all))}})
+
 (defcard "Oversight AI"
   {:on-play {:choices {:card #(and (ice? %)
                                    (not (rezzed? %))

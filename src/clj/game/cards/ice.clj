@@ -2640,12 +2640,27 @@
 (defcard "ONR Canis Major"
   {:subroutines [{:label "Give +2 strength to all ice for the remainder of the run"
                   :msg "give +2 strength to all ice for the remainder of the run"
-                  :effect (effect (pump-all-ice 2 :end-of-run))}]})
+                  :effect (effect (register-floating-effect
+                                   card
+                                   {:type :ice-strength
+                                    :req (req (and (get-current-encounter state)
+                                                   (same-card? current-ice target)))
+                                    :duration :end-of-run
+                                    :value 2})
+                                  (update-all-ice))}]})
+
 
 (defcard "ONR Canis Minor"
   {:subroutines [{:label "Give +1 strength to all ice for the remainder of the run"
                   :msg "give +1 strength to all ice for the remainder of the run"
-                  :effect (effect (pump-all-ice 1 :end-of-run))}]})
+                  :effect (effect (register-floating-effect
+                                   card
+                                   {:type :ice-strength
+                                    :req (req (and (get-current-encounter state)
+                                                   (same-card? current-ice target)))
+                                    :duration :end-of-run
+                                    :value 1})
+                                  (update-all-ice))}]})
 
 (defcard "Orion"
   (space-ice trash-program-sub

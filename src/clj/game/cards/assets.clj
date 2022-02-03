@@ -1491,6 +1491,43 @@
 (defcard "ONR Braindance Campaign"
   (campaign 12 2))
 
+(defcard "ONR Chicago Branch"
+  {:abilities [{:cost [[:click 1] [:credit 3]]
+                :keep-open :while-clicks-left
+                :label "Place 2 advancement counters on a card that can be advanced"
+                :choices {:card can-be-advanced?}
+                :effect (effect (add-prop target :advance-counter 2 {:placed true}))}]})
+
+(defcard "ONR City Surveillance"
+  {:derezzed-events [{:event :pre-runner-draw
+                      :async true
+                      :effect (req (let [etarget target]
+                                     (continue-ability
+                                      state side
+                                      {:optional
+                                       {:req (req (not (rezzed? card)))
+                                        :player :corp
+                                        :prompt (msg "The Runner is about to draw. Rez City Surveillance?")
+                                        :yes-ability {:async true
+                                                      :effect (effect (rez eid card))}}}
+                                       card nil)))}]
+   :events [{:event :runner-draw
+             :async true
+             :player :runner
+             :prompt "Pay 1 [Credits] or take 1 tag"
+             :choices (req [(when (pos? (:credit runner))
+                              "Pay 1 [Credits]")
+                            "Take 1 tag"])
+             :msg "make the Runner pay 1 [Credits] or take 1 tag"
+             :effect (req (case target
+                            "Pay 1 [Credits]"
+                            (wait-for (pay state :runner (make-eid state eid) card :credit 1)
+                                      (when-let [payment-str (:msg async-result)]
+                                        (system-msg state :runner payment-str))
+                                      (effect-completed state side eid))
+                            (do (system-msg state :runner "takes 1 tag")
+                                (gain-tags state :corp eid 1))))}]})
+
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)

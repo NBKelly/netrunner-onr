@@ -18,9 +18,13 @@ ONR ONR Bodyweight [TM] Synthetic Blood
 ONR Bolter Cluster (see inazuma)
 ONR Braindance Campaign
 ONR Broker (see kati jones)
-
+ONR Canis Major (see ice carver, red tape)
+ONR Canis Minor (see ice carver, red tape)
+ONR Chicago Branch (ref: PAD Factory I guess?)
+ONR Cloak (test noisy restriction)
+ONR Closed Accounts (same tests as closed accounts)
+ONR Clown (ice carver)
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
 ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)
-ONR Canis Major (doesn't work if ice was unrezzed, doesn't apply on encounter)
-ONR Canis Minor (doesn't work if ice was unrezzed, doesn't apply on encounter)
+ONR City Surviellance (adjust for number of cards drawn, interrupt-rez needs to be better)

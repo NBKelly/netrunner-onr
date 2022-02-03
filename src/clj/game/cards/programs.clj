@@ -1882,6 +1882,20 @@
    {:abilities [(break-sub 2 1 "Sentry")
                 (strength-pump 2 1)]}))
 
+(defcard "ONR Cloak"
+  {:recurring 3
+   :interactions {:pay-credits {:req (req (and (= :ability (:source-type eid))
+                                               (has-subtype? target "Icebreaker")
+                                               (not (has-subtype? target "Noisy"))
+                                               run))
+                                :type :recurring}}})
+
+(defcard "ONR Clown"
+  {:constant-effects [{:type :ice-strength
+                       :req (req (and (get-current-encounter state)
+                                      (same-card? current-ice target)))
+                       :value -1}]})
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"
