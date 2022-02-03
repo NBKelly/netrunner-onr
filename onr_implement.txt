@@ -45,8 +45,12 @@ ONR Data Masons (akitanaro, cyberwalls)
 ONR Data Naga (Rototurret)
 ONR Data Wall (ice wall)
 ONR Data Wall 2.0 (ice wall)
+ONR Datapool (R) by Zetatech (big brother)
+ONR Day Shift (green level clearance?)
+ONR Dedicated Response Team (Shock! + is-tagged?)
+ONR Department of Truth Enhancement (See kati)
 
-46
+50
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

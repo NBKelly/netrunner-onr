@@ -1489,6 +1489,20 @@
     :async true
     :effect (effect (trash-cards :runner eid targets))}})
 
+(defcard "ONR Datapool (R) by Zetatech"
+  {:on-play
+   {:req (req tagged)
+    :msg "give the Runner 2 tags"
+    :async true
+    :effect (effect (gain-tags :corp eid 2))}})
+
+(defcard "ONR Day Shift"
+  {:on-play
+   {:msg "gain 1 [Credits] and draw 2 cards"
+    :async true
+    :effect (req (wait-for (gain-credits state side 1)
+                           (draw state side eid 2)))}})
+
 (defcard "Oversight AI"
   {:on-play {:choices {:card #(and (ice? %)
                                    (not (rezzed? %))

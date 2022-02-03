@@ -1557,6 +1557,26 @@
                                         (has-subtype? target "Wall")))
                          :value 1}]})
 
+(defcard "ONR Dedicated Response Team"
+  {:flags {:rd-reveal (req true)}
+   :access {:msg "do 3 meat damage"
+;;            :req (req (tagged))
+            :async true
+            :effect (req (if tagged
+                           (damage state side eid :meat 3 {:card card}))
+                         (effect-completed state side eid)
+                         )}})
+
+(defcard "ONR Department of Truth Enhancement"
+  {:abilities [{:cost [:click 1]
+                :msg "store 3 [Credits]"
+                :effect (effect (add-counter card :credit 3))}
+               {:cost [:click 1]
+                :msg (msg "gain " (get-counters card :credit) " [Credits]")
+                :label "Take all credits"
+                :async true
+                :effect (effect (add-counter card :credit (- (get-counters card :credit)))
+                                (gain-credits eid (get-counters card :credit)))}]})
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)
