@@ -1528,6 +1528,7 @@
                             (do (system-msg state :runner "takes 1 tag")
                                 (gain-tags state :corp eid 1))))}]})
 
+
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)

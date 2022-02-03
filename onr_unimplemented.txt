@@ -57,11 +57,6 @@ DOABLE:
   ONR Chester Mix (ref: jinja, akitanaro)
   ONR Chimera (ref: aggressive secretery, shock!)
 EASY:	  
-  ONR Core Command: Jettison Ice (ref emergency shutdown, brute force hack)
-  ONR Corolla Speed Chip (ref dyson fractal)
-  ONR Corporate Boon (ref elective upgrades?)
-  ONR Corporate Coup (regolith, but don't trash)
-  ONR Corporate Detective Agency (there is a card that does this)
   ONR Corporate Negotiating Center (celeb gift + start of turn)  
   ONR Corporate War (ref corp war)
   ONR Corprunner's Shattered Remains (shattered remains)

@@ -1479,6 +1479,16 @@
     :async true
     :effect (effect (lose-credits :runner eid :all))}})
 
+(defcard "ONR Corporate Detective Agency"
+  {:on-play
+   {:req (req tagged)
+    :msg (msg "trash " (string/join ", " (map :title (sort-by :title targets))))
+    :choices {:max 2
+              :card #(and (installed? %)
+                          (resource? %))}
+    :async true
+    :effect (effect (trash-cards :runner eid targets))}})
+
 (defcard "Oversight AI"
   {:on-play {:choices {:card #(and (ice? %)
                                    (not (rezzed? %))

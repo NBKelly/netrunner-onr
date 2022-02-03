@@ -186,7 +186,7 @@
                 :label "increase cost to break subroutines or jack out"
                 :msg "make the Runner trash a card from their grip to jack out or break subroutines for the remainder of the run"
                 :effect (effect (register-floating-effect
-                                  card
+                                 card
                                   {:type :break-sub-additional-cost
                                    :duration :end-of-run
                                    :value (req (repeat (count (:broken-subs (second targets))) [:trash-from-hand 1]))})
@@ -1163,6 +1163,27 @@
   {:constant-effects [{:type :ice-strength
                        :req (req (has-subtype? target "Black Ice"))
                        :value 2}]})
+
+(defcard "ONR Corporate Boon"
+  {:on-score {:silent (req true)
+              :effect (effect (add-counter card :agenda 4))}
+   :abilities [{:cost [:agenda 1]
+                :req (req (= :corp (:active-player @state)))
+                :once :per-turn
+                :effect (effect (gain-clicks 1))
+                :msg "gain [Click]"}]})
+
+(defcard "ONR Corporate Coup"
+    {:data {:counter {:credit 15}}
+     :abilities [{:label "Take 3 [Credits] from this Corporate Coup"
+                  :cost [:click 1]
+                  :keep-open :while-clicks-left
+                  :msg (msg "gain " (min 3 (get-counters card :credit)) " [Credits]")
+                  :async true
+                  :effect (req (let [credits (min 3 (get-counters card :credit))]
+                                 (wait-for (gain-credits state :corp (make-eid state eid) credits)
+                                           (add-counter state side card :credit (- credits) {:placed true})
+                                           (effect-completed state side eid))))}]})
 
 (defcard "Paper Trail"
   {:on-score

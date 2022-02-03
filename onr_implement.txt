@@ -28,6 +28,8 @@ ONR Code Corpse (ref viktor 1.0)
 ONR Codecracker
 ONR Codeslinger
 ONR Corolla Speed Chip (ref dyson fractal)
+ONR Corporate Boon (ref elective upgrades)
+ONR Corporate Detective Agency (ref freelancer)
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
 ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)
