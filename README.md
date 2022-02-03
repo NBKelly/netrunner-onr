@@ -8,6 +8,26 @@ As I work, I'm trying to put cards in baskets: easy to implement, things that wi
 
 Implementation status of ONR cards can be found in 'implement' and 'unimplemented' text files, as I slowly work through them (in order).
 
+There are several game systems that need to be changed/modified/added for onr to work. These are:
+* counters get hosted all over the place, and lots of cards have their own unique counters (every single virus, lots of ice, etc)
+* lots of cards create permanent floating effects
+* you can pay agenda points (different to forfieting agendas)
+* purging requires you to forgo future actions. You can purge in any ability window.
+* Other abilities on both sides will also require players to forgo actions
+    * the solution for this is to do the following
+    * There's a "actions owed/to forgo" counter for each player
+    * If the counter is positive, no basic or click actions can be taken by that player except forgoing an action
+* The ONR trace system is different - the corp can pay credits up to the trace strength, and the runner needs link cards to interact with traces
+* Bad publicity does not give credits per run - it instead makes the corp lose at 7
+* Regions (and certain other cards) require the corp to have the rez credits handy already, and are rezzed when installed
+
+# ONR Implementation status
+There are currently 41/580 cards fully implemented, and 5/580 cards partially implemented.
+
+# Why
+
+I thought it would be fun.
+
 # Android: Netrunner in the browser
 
 [![Build status](https://circleci.com/gh/mtgred/netrunner/tree/master.svg?style=shield)](https://circleci.com/gh/mtgred/netrunner)
