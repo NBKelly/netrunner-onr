@@ -22,7 +22,7 @@ There are several game systems that need to be changed/modified/added for onr to
 * Regions (and certain other cards) require the corp to have the rez credits handy already, and are rezzed when installed
 
 # ONR Implementation status
-There are currently 31/580 cards fully implemented, and 5/580 cards partially implemented.
+There are currently 41/580 cards fully implemented, and 5/580 cards partially implemented.
 
 # Why
 
