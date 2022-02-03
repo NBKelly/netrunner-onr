@@ -1854,6 +1854,13 @@
                 :effect (effect (add-counter card :credit (- (get-counters card :credit)))
                                 (gain-credits eid (get-counters card :credit)))}]})
 
+(defcard "ONR Danshi's Second ID"
+  {:abilities [{:msg "remove 1 tag"
+               :label "Remove 1 tag"
+               :cost [:trash :click 1]
+               :async true
+               :effect (effect (lose-tags eid 3))}]})
+
 (defcard "Oracle May"
   {:abilities [{:cost [:click 1]
                 :label "name and reveal a card"

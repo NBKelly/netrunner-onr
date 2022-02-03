@@ -1903,6 +1903,11 @@
 (defcard "ONR Codeslinger"
   (auto-icebreaker {:abilities [(break-sub 1 1 "Sentry")]}))
 
+(defcard "ONR Cyfermaster"
+  (auto-icebreaker
+   {:abilities [(break-sub 2 1 "Code Gate")
+                (strength-pump 1 1)]}))
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"

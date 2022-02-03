@@ -35,6 +35,11 @@ ONR Corprunner's Shattered Remains (shattered remains)
 ONR Cortical Scanner (spiderweb)
 ONR Cortical Scrub (viktor 1.0)
 ONR Cowboy Sysop (isabel macquire)
+ONR Crystal Wall (ice wall)
+ONR Custodial Position (Makers Eye)
+ONR Cyfermaster
+ONR D'arc Knight (rototurret)
+ONR Danshi's Second ID (see forger)
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
 ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)

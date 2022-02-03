@@ -2223,6 +2223,18 @@
                                 card nil))}
              card nil)))}})
 
+(defcard "ONR Custodial Position"
+  {:makes-run true
+   :on-play {:req (req rd-runnable)
+             :async true
+             :effect (effect (make-run eid :rd card))}
+   :events [{:event :successful-run
+             :silent (req true)
+             :req (req (and (= :rd (target-server context))
+                            this-card-run))
+             :effect (effect (register-events
+                              card [(breach-access-bonus :rd 2 {:duration :end-of-run})]))}]})
+
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
                    :choices (req runnable-servers)

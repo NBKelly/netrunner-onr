@@ -41,6 +41,9 @@ REQUIRES ONR TRACES:
   ONR Blood Cat
   ONR Chance Observation (ref: SEA SourcE)
   ONR Cinderella (ref: flare)
+
+REQUIRES REGION RULES:
+  ONR Crystal Palace Station Grid (ref midway station)
   
 DOABLE:
   ONR All-Nighter (note - doppleganger, always have a backup plan)
@@ -57,18 +60,8 @@ DOABLE:
   ONR Chester Mix (ref: jinja, akitanaro)
   ONR Chimera (ref: aggressive secretery, shock!)
   ONR Corporate Negotiating Center (celeb gift + start of turn)  
+
 EASY:	  
-  ONR Corporate War (ref corp war)
-  ONR Corprunner's Shattered Remains (shattered remains)
-  ONR Cortical Scanner (spiderweb)
-  ONR Cortical Scrub (viktor 1.0)
-  ONR Cowboy Sysop (it must exist)
-  ONR Crystal Palace Station Grid (ref midway station)
-  ONR Crystal Wall (ice wall)
-  ONR Custodial Position (Makers Eye)
-  ONR Cyfermaster
-  ONR D'arc Knight (rototurret)
-  ONR Danshi's Second ID (see forger)
   ONR Data Darts (ref neural katana, that other ice)
   ONR Data Naga (Rototurret)
   ONR Data Wall (ice wall)

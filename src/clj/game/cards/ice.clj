@@ -2690,6 +2690,13 @@
   {:subroutines [(do-brain-damage 1)
                  end-the-run]})
 
+(defcard "ONR Crystal Wall"
+  {:subroutines [end-the-run]})
+
+(defcard "ONR D'Arc Knight"
+  {:subroutines [trash-program-sub
+                 end-the-run]})
+
 (defcard "Orion"
   (space-ice trash-program-sub
              (resolve-another-subroutine)
