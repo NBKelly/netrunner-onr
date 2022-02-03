@@ -2681,6 +2681,15 @@
                  (do-brain-damage 1)
                  end-the-run]})
 
+(defcard "ONR Cortical Scanner"
+  {:subroutines [end-the-run
+                 end-the-run
+                 end-the-run]})
+
+(defcard "ONR Cortical Scrub"
+  {:subroutines [(do-brain-damage 1)
+                 end-the-run]})
+
 (defcard "Orion"
   (space-ice trash-program-sub
              (resolve-another-subroutine)

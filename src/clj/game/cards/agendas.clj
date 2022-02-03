@@ -1185,6 +1185,15 @@
                                            (add-counter state side card :credit (- credits) {:placed true})
                                            (effect-completed state side eid))))}]})
 
+(defcard "ONR Corporate War"
+  {:on-score
+   {:msg (msg (if (> (:credit corp) 11) "gain 12 [Credits]" "lose all credits"))
+    :interactive (req true)
+    :async true
+    :effect (req (if (> (:credit corp) 11)
+                   (gain-credits state :corp eid 12)
+                   (lose-credits state :corp eid :all)))}})
+
 (defcard "Paper Trail"
   {:on-score
    {:trace

@@ -56,8 +56,8 @@ DOABLE:
   ONR Diplomatic Immunity (see blank card)
   ONR Chester Mix (ref: jinja, akitanaro)
   ONR Chimera (ref: aggressive secretery, shock!)
-EASY:	  
   ONR Corporate Negotiating Center (celeb gift + start of turn)  
+EASY:	  
   ONR Corporate War (ref corp war)
   ONR Corprunner's Shattered Remains (shattered remains)
   ONR Cortical Scanner (spiderweb)

@@ -1528,6 +1528,24 @@
                             (do (system-msg state :runner "takes 1 tag")
                                 (gain-tags state :corp eid 1))))}]})
 
+(defcard "ONR Corprunner's Shattered Remains"
+  (advance-ambush 0 {:async true
+                     :waiting-prompt "Corp to make a decision"
+                     :req (req (pos? (get-counters (get-card state card) :advancement)))
+                     :prompt (msg "Choose " (quantify (get-counters (get-card state card) :advancement) "piece") " of hardware to trash")
+                     :msg (msg "trash " (string/join ", " (map :title targets)))
+                     :choices {:max (req (get-counters (get-card state card) :advancement))
+                               :card #(and (installed? %)
+                                           (hardware? %))}
+                     :effect (effect (trash-cards eid targets))}))
+
+(defcard "ONR Cowboy Sysop"
+  {:abilities [{:label "Add an installed card to HQ"
+                :cost [:click 1]
+                :keep-open :while-clicks-left
+                :choices {:card installed?}
+                :msg (msg "move " (card-str state target) " to HQ")
+                :effect (effect (move target :hand))}]})
 
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
