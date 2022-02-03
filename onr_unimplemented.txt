@@ -57,9 +57,6 @@ DOABLE:
   ONR Chester Mix (ref: jinja, akitanaro)
   ONR Chimera (ref: aggressive secretery, shock!)
 EASY:	  
-  ONR Code Corpse (ref NEXT Diamond)
-  ONR Codecracker
-  ONR Codeslinger
   ONR Core Command: Jettison Ice (ref emergency shutdown, brute force hack)
   ONR Corolla Speed Chip (ref dyson fractal)
   ONR Corporate Boon (ref elective upgrades?)

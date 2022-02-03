@@ -2612,6 +2612,20 @@
    :subroutines [end-the-run
                  end-the-run]})
 
+(defcard "ONR Ball and Chain"
+  {:subroutines [{:msg "For the remainder the the run, Runner must pay 2 [Credits] when encountering a piece of Ice, or end the run"
+                  ;;:label "Make the runner pay 2 [credit] or end the run when they encounter Ice"
+                  :effect (effect (register-floating-effect
+                                   card
+                                   {:type :encounter-ice
+                                    :duration :end-of-run
+                                    :effect (req (wait-for (pay state :runner (make-eid state eid) card [:credit 2])
+                                                           (if (:cost-paid async-result)
+                                                             (do (system-msg state :runner (str (:msg async-result) " when encountering Ice, due to Ball and Chain"))
+                                                                 (effect-completed state side eid))
+                                                             (do (system-msg state :runner "ends the run, as the Runner can't pay 2 [Credits] when encountering Ice, due to Ball and Chain")
+                                                                 (end-run state :corp eid card)))))}))}]})
+
 (defcard "ONR Banpei"
   {:subroutines [trash-program-sub
                  end-the-run]})
@@ -2661,6 +2675,11 @@
                                     :duration :end-of-run
                                     :value 1})
                                   (update-all-ice))}]})
+
+(defcard "ONR Code Corpse"
+  {:subroutines [(do-brain-damage 1)
+                 (do-brain-damage 1)
+                 end-the-run]})
 
 (defcard "Orion"
   (space-ice trash-program-sub

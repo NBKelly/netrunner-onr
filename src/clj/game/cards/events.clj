@@ -2188,6 +2188,41 @@
     :async true
     :effect (effect (draw eid 5))}})
 
+(defcard "ONR Core Command: Jettison Ice"
+  {:on-play
+   {:req (req (and (some #{:hq} (:successful-run runner-reg))
+                   (some #(and (ice? %)
+                               (rezzed? %)
+                               (can-pay? state side eid card nil
+                                         [:credit (rez-cost state side %)]))
+                         (all-installed state :corp))))
+    :async true
+    :effect
+    (req (let [affordable-ice
+               (seq (filter
+                      identity
+                      (for [ice (all-installed state :corp)
+                            :when (and (ice? ice)
+                                       (rezzed? ice))
+                            :let [cost (rez-cost state side ice)]]
+                        (when (can-pay? state side eid card nil [:credit cost])
+                          [(:cid ice) cost]))))]
+           (continue-ability
+             state side
+             {:prompt "How many [Credits]?"
+              :choices :credit
+              :msg (msg "spends " target " [Credit] on Core Command: Jettison Ice")
+              :effect (effect (continue-ability
+                                {:choices {:card #(and (rezzed? %)
+                                                       (some (fn [c] (and (= (first c)
+                                                                             (:cid %))
+                                                                          (<= (second c) target)))
+                                                             affordable-ice))}
+                                 :msg (msg "trash " (card-str state target))
+                                 :effect (effect (trash target))}
+                                card nil))}
+             card nil)))}})
+
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
                    :choices (req runnable-servers)

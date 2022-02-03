@@ -1896,6 +1896,13 @@
                                       (same-card? current-ice target)))
                        :value -1}]})
 
+(defcard "ONR Codecracker"
+  (auto-icebreaker {:abilities [(break-sub 0 1 "Code Gate")
+                                (strength-pump 1 1)]}))
+
+(defcard "ONR Codeslinger"
+  (auto-icebreaker {:abilities [(break-sub 1 1 "Sentry")]}))
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"

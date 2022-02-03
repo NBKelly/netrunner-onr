@@ -1329,6 +1329,14 @@
                                                (program? target)))
                                 :type :recurring}}})
 
+(defcard "ONR Corolla Speed Chip"
+  {:recurring 1
+   :interactions {:pay-credits {:req (req (and (= :ability (:source-type eid))
+                                               (has-subtype? target "Killer")
+                                               run
+                                               (has-subtype? target "Icebreaker")))
+                                :type :recurring}}})
+
 (defcard "Pantograph"
   (let [install-ability
         {:async true
