@@ -23,6 +23,10 @@ There are several game systems that need to be changed/modified/added for onr to
 # ONR Implementation status
 There are currently 31/580 cards fully implemented, and 5/580 cards partially implemented.
 
+# Why
+
+I thought it would be fun.
+
 # Android: Netrunner in the browser
 
 [![Build status](https://circleci.com/gh/mtgred/netrunner/tree/master.svg?style=shield)](https://circleci.com/gh/mtgred/netrunner)
