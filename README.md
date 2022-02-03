@@ -19,6 +19,7 @@ There are several game systems that need to be changed/modified/added for onr to
     * If the counter is positive, no basic or click actions can be taken by that player except forgoing an action
 * The ONR trace system is different - the corp can pay credits up to the trace strength, and the runner needs link cards to interact with traces
 * Bad publicity does not give credits per run - it instead makes the corp lose at 7
+* Regions (and certain other cards) require the corp to have the rez credits handy already, and are rezzed when installed
 
 # ONR Implementation status
 There are currently 31/580 cards fully implemented, and 5/580 cards partially implemented.
