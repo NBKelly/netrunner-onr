@@ -1618,6 +1618,19 @@
 (defcard "ONR Euromarket Consortium"
   {:constant-effects [(corp-hand-size+ 2)]})
 
+(defcard "ONR Experimental AI"
+  (advance-ambush 0 {:req (req (pos? (get-counters (get-card state card) :advancement)))
+                     :waiting-prompt "Corp to make a decision"
+                     :prompt (msg "Choose " (quantify (get-counters (get-card state card) :advancement) "program") " to trash")
+                     :cost [:credit 2]
+                     :choices {:max (req (get-counters (get-card state card) :advancement))
+                               :card #(and (installed? %)
+                                           (program? %))}
+                     :msg (msg "trash " (string/join ", " (map :title targets)))
+                     :async true
+                     :effect (effect (trash-cards eid targets))}))
+
+
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)

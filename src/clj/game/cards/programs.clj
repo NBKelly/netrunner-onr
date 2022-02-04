@@ -1921,6 +1921,18 @@
    {:abilities [(break-sub 1 1 "Wall")
                 (strength-pump 1 1)]}))
 
+(defcard "ONR Expert Schedule Analyzer"
+  (let [reveal-hq-after-breach {:req (req (= (:from-server target) :hq))
+                                :silent (req true)
+                                :async true
+                                :msg (msg "reveal cards in HQ: " (string/join ", " (sort (map :title (:hand corp)))))
+                                :effect (effect (reveal eid (:hand corp)))}]
+    {:events [(assoc reveal-hq-after-breach :event :end-breach-server)]}))
+
+(defcard "ONR Flak"
+  (auto-icebreaker {:abilities [(break-sub 1 1 "AP")
+                                (strength-pump 1 1)]}))
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"

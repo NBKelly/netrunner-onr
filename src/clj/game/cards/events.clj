@@ -2253,6 +2253,19 @@
                                          (lose-credits state :corp eid (min 1 (:credit corp))))
                                (breach-server state :runner eid [:hq] {:no-root false})))}})]})
 
+(defcard "ONR Executive Wiretaps"
+  {:makes-run true
+   :on-play {:req (req hq-runnable)
+             :async true
+             :effect (effect (make-run eid :hq card))}
+   :events [{:event :successful-run
+             :silent (req true)
+             :req (req (and (= :hq (target-server context))
+                            this-card-run))
+             :effect (effect (register-events
+                              card [(breach-access-bonus :hq 2 {:duration :end-of-run})]))}]})
+
+
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
                    :choices (req runnable-servers)

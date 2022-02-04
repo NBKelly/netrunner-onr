@@ -1226,6 +1226,12 @@
                   :async true
                   :effect (effect (draw eid 2))}]}))
 
+(defcard "ONR Executive Extraction"
+  {:constant-effects [{:type :advancement-requirement
+                       :req (req (and (agenda? target)
+                                      (has-subtype? target "Gray Ops")))
+                       :value -1}]})
+
 (defcard "Paper Trail"
   {:on-score
    {:trace

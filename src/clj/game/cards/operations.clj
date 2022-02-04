@@ -1509,6 +1509,36 @@
     :async true
     :effect (effect (gain-credits eid 3))}})
 
+(defcard "Falsified-Transactions Expert"
+  {:on-play
+   {:prompt "Choose an installed card you can advance"
+    :req (req (let [advanceable (some can-be-advanced? (get-all-installed state))
+                    num-installed (count (get-all-installed state))]
+                 (and advanceable
+                      (> num-installed 1))))
+    :choices {:card #(and (can-be-advanced? %)
+                          (installed? %))}
+    :async true
+    :effect (effect
+              (continue-ability
+                (let [card-to-advance target]
+                  {:async true
+                   :prompt "Choose another installed card"
+                   :choices {:card #(and (not (same-card? card-to-advance %))
+                                         (installed? %))}
+                   :effect (effect
+                             (continue-ability
+                               (let [source target]
+                                 {:prompt "Choose number of counters"
+                                  :choices (take (inc (get-counters source :advancement)) ["0" "1" "2" "3"])
+                                  :msg (msg "move " target " advancement counters from "
+                                            (card-str state source) " to " (card-str state card-to-advance))
+                                  :effect (effect (add-prop :corp card-to-advance :advance-counter (str->int target) {:placed true})
+                                                  (add-prop :corp source :advance-counter (- (str->int target)) {:placed true}))})
+                               card nil))})
+                card nil))}})
+
+
 (defcard "Oversight AI"
   {:on-play {:choices {:card #(and (ice? %)
                                    (not (rezzed? %))

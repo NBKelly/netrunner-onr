@@ -2732,6 +2732,35 @@
   {:subroutines [end-the-run
                  end-the-run]})
 
+(defcard "ONR Fatal Attractor"
+  {:subroutines
+   [{:label "Add 'do 3 net damage if the runner does not break all subroutines' to the next piece of ICE encountered this run"
+     :req (req this-server)
+     :msg (msg "Add 'do 3 net damage if the runner does not break all subroutines' to the next piece of ICE encountered this run")
+     :effect
+     (effect (register-events
+               card
+               [{:event :encounter-ice
+                 :duration :end-of-run
+                 :unregister-once-resolved true
+                 :effect
+                 (req (let [target-ice (:ice context)]                        
+                        (register-events
+                          state side card
+                          [(assoc (do-net-damage 3)
+                                  :event :end-of-encounter
+                                  :duration :end-of-run
+                                  :unregister-once-resolved true
+                                  :req (req (and (same-card? (:ice context) target-ice)
+                                                 (seq (remove :broken (:subroutines (:ice context)))))))])))}]))}]})
+
+(defcard "ONR Filter"
+  {:subroutines [end-the-run]})
+
+(defcard "ONR Fire Wall"
+  {:subroutines [end-the-run]})
+
+
 (defcard "Orion"
   (space-ice trash-program-sub
              (resolve-another-subroutine)

@@ -60,7 +60,18 @@ ONR Employee Empowerment  (see CSR campaign, calvin bailey)
 ONR Endless Corridor (see bastion)
 ONR ESA Contract (calbin bailey)
 ONR Euromarket Consortium (cybernetics court, bailey)
-61
+ONR Executive Extraction (see the other difficulty reducing agenda)
+ONR Executive Wiretaps (legwork)
+ONR Experimental AI (see agg-sec)
+ONR Expert Schedule Analyzer (see executive wiretaps, post access)
+ONR Fall Guy (see decoy)
+ONR Falsified-Transactions Expert (trick of light)
+ONR Fatal Attractor (chum)
+ONR Filter (ice wall)
+ONR Fire Wall (ice wall)
+ONR Flak (break AP)
+ONR Floating Runner BBS (rezeki)
+72
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

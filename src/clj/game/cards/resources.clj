@@ -1861,6 +1861,20 @@
                :async true
                :effect (effect (lose-tags eid 3))}]})
 
+(defcard "ONR Fall Guy"
+  {:interactions {:prevent [{:type #{:tag}
+                             :req (req true)}]}
+   :abilities [{:async true
+                :cost [:trash]
+                :msg "avoid 1 tag"
+                :effect (effect (tag-prevent :runner eid 1))}]})
+
+(defcard "ONR Floating Runner BBS"
+  {:events [{:event :runner-turn-begins
+             :msg "gain 1 [Credits]"
+             :async true
+             :effect (effect (gain-credits eid 1))}]})
+
 (defcard "Oracle May"
   {:abilities [{:cost [:click 1]
                 :label "name and reveal a card"
