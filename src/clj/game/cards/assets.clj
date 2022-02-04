@@ -1630,6 +1630,10 @@
                      :async true
                      :effect (effect (trash-cards eid targets))}))
 
+(defcard "ONR Fortress Architects"
+    {:constant-effects [{:type :install-cost
+                         :req (req (and (ice? target)))
+                         :value -1}]})
 
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw

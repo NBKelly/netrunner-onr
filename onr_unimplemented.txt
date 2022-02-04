@@ -78,13 +78,10 @@ DOABLE:
   ONR Dupre (strength counter, mark servers)
   ONR Evil Twin (prevent damage twice, sentry breaker)
   ONR Field Reporter for Ice and Data (corporate insider, but end of turn?)
-  
+  ONR Force Shield (prevent 2 net/brain)  
 EASY:	  
-  ONR Force Shield (prevent 2 net/brain)
-  ONR Forged Activation Orders (forged activation orders)
-  ONR Forgotten Backup Chip (fetch from archives a program - de ja vu?)
-  ONR Fortress Architects (simple)
 
-continue from: base/Evil Twin
+
+continue from: base/Fortress ArchitectsEvil Twin
 scan from: base/fragmentation storm
 

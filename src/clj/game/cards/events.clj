@@ -2265,6 +2265,43 @@
              :effect (effect (register-events
                               card [(breach-access-bonus :hq 2 {:duration :end-of-run})]))}]})
 
+(defcard "ONR Forged Activation Orders"
+  {:on-play
+   {:choices {:card #(and (ice? %)
+                          (not (rezzed? %)))}
+    :async true
+    :effect (req (let [ice target
+                       serv (zone->name (second (get-zone ice)))
+                       icepos (card-index state ice)]
+                   (continue-ability
+                     state :corp
+                     {:prompt (str "Rez " (:title ice) " at position " icepos
+                                   " of " serv " or trash it?")
+                      :choices ["Rez" "Trash"]
+                      :async true
+                      :waiting-prompt "Corp to choose an option"
+                      :effect (effect (continue-ability
+                                        (if (and (= target "Rez")
+                                                 (<= (rez-cost state :corp ice)
+                                                     (:credit corp)))
+                                          {:msg (msg "force the rez of " (:title ice))
+                                           :async true
+                                           :effect (effect (rez :corp eid ice))}
+                                          {:msg (msg "trash the ice at position " icepos " of " serv)
+                                           :async true
+                                           :effect (effect (trash :corp eid ice))})
+                                        card nil))}
+                     card nil)))}})
+
+(defcard "ONR Forgotten Backup Chip"
+  {:on-play
+   {:req (req (not (zone-locked? state :runner :discard)))
+    :prompt "Choose a program to add to Grip"    
+    :choices {:req (req (and (program? target)
+                       (in-discard? target)))}
+    :msg (msg "add " (:title target) " to their Grip")
+    :async true
+    :effect (effect (move target :hand))}})
 
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
