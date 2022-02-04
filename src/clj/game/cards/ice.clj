@@ -2728,6 +2728,10 @@
 (defcard "ONR Data Wall 2.0"
   {:subroutines [end-the-run]})
 
+(defcard "ONR Endless Corridor"
+  {:subroutines [end-the-run
+                 end-the-run]})
+
 (defcard "Orion"
   (space-ice trash-program-sub
              (resolve-another-subroutine)

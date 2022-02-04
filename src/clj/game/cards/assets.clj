@@ -1577,6 +1577,47 @@
                 :async true
                 :effect (effect (add-counter card :credit (- (get-counters card :credit)))
                                 (gain-credits eid (get-counters card :credit)))}]})
+
+(defcard "ONR Encoder, Inc."
+  (let [new-sub {:label "[Encoder, Inc.] End the run."}]
+    (letfn [(all-rezzed-bios [state]
+              (filter #(and (ice? %)
+                            (has-subtype? % "Code Gate")
+                            (rezzed? %))
+                      (all-installed state :corp)))
+            (remove-one [cid state ice]
+              (remove-extra-subs! state :corp ice cid))
+            (add-one [cid state ice]
+              (add-extra-sub! state :corp ice new-sub cid {:front false}))
+            (update-all [state func]
+              (doseq [i (all-rezzed-bios state)]
+                (func state i)))]
+      {:constant-effects [{:type :rez-cost
+                           :req (req (and (ice? target)
+                                          (has-subtype? target "Code Gate")))
+                           :value -1}]
+       :on-rez {:effect (req (system-msg
+                               state :corp
+                               "uses Encoder, Inc. to add \"[Subroutine] End the run.\" after all other subroutines")
+                             (update-all state (partial add-one (:cid card))))}
+       :leave-play (req (system-msg state :corp "loses Encoder, Inc. additional subroutines")
+                     (update-all state (partial remove-one (:cid card))))
+       :sub-effect {:msg "end the run"
+                    :effect (effect (end-run :corp eid card))}
+       :events [{:event :rez
+                 :req (req (and (ice? (:card context))
+                                (has-subtype? (:card context) "Code Gate")))
+                 :effect (req (add-one (:cid card) state (get-card state (:card context))))}]})))
+
+(defcard "ONR ESA Contract"
+  {:abilities [{:cost [:click 1]
+                :msg "draw 2 cards"
+                :async true
+                :effect (effect (draw eid 2))}]})
+
+(defcard "ONR Euromarket Consortium"
+  {:constant-effects [(corp-hand-size+ 2)]})
+
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)

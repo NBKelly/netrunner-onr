@@ -56,7 +56,11 @@ ONR Dogcatcher
 ONR Dwarf
 ONR Edited Shipping Manifests (see siphon)
 ONR Efficiency Experts (beanstalk)
-57
+ONR Employee Empowerment  (see CSR campaign, calvin bailey)
+ONR Endless Corridor (see bastion)
+ONR ESA Contract (calbin bailey)
+ONR Euromarket Consortium (cybernetics court, bailey)
+61
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
@@ -64,5 +68,5 @@ ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)
 ONR City Surviellance (adjust for number of cards drawn, interrupt-rez needs to be better)
 ONR Ball and Chain (implementation doesn't do anything)
 ONR Core Command: Jettison Ice (choices credit is not functional right now)
-
+ONR Encoder, Inc. (subroutine does not work)
 5

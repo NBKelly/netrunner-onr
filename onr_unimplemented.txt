@@ -79,11 +79,6 @@ DOABLE:
   ONR Dupre (strength counter, mark servers)
   
 EASY:	  
-  ONR Employee Empowerment  (see CSR campaign, calvin bailey)
-  ONR Encoder, Inc. (see warden fatima)
-  ONR Endless Corridor (see bastion)
-  ONR ESA Contract (calbin bailey)
-  ONR Euromarket Consortium (cybernetics court, bailey)
   ONR Evil Twin (prevent damage twice, sentry breaker)
   ONR Executive Extraction (see the other difficulty reducing agenda)
   ONR Executive Wiretaps (legwork)
@@ -101,6 +96,6 @@ EASY:
   ONR Forgotten Backup Chip (fetch from archives a program - de ja vu?)
   ONR Fortress Architects (simple)
 
-continue from: base/fragmentation storm
+continue from: base/Evil Twin
 scan from: base/fragmentation storm
 

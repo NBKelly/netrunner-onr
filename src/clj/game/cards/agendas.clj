@@ -1204,6 +1204,28 @@
                 :silent (req true)}
      :events [(assoc e :event :corp-turn-begins)]}))
 
+(defcard "ONR Employee Empowerment"
+  (let [ability {:once :per-turn
+                 :async true
+                 :label "Draw 1 card (start of turn)"
+                 :interactive (req true)
+                 :effect (effect (continue-ability
+                                   {:optional
+                                    {:prompt "Use CSR Campaign to draw 1 card?"
+                                     :yes-ability {:async true
+                                                   :msg "draw 1 card"
+                                                   :effect (effect (draw eid 1))}}}
+                                   card nil))}]
+    {:derezzed-events [corp-rez-toast]
+     :flags {:corp-phase-12 (req true)}
+     :events [(assoc ability :event :corp-turn-begins)]
+     
+     :abilities [ability
+                 {:cost [:click 1]
+                  :msg "draw 2 cards"
+                  :async true
+                  :effect (effect (draw eid 2))}]}))
+
 (defcard "Paper Trail"
   {:on-score
    {:trace
