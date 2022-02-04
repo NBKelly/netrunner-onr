@@ -12,6 +12,7 @@ There are several game systems that need to be changed/modified/added for onr to
 * counters get hosted all over the place, and lots of cards have their own unique counters (every single virus, lots of ice, etc)
 * lots of cards create permanent floating effects
 * you can pay agenda points (different to forfieting agendas)
+* some cards disable actions (as a floating effect) until a cost is paid - interaction needs to persist even if that card dissapears
 * purging requires you to forgo future actions. You can purge in any ability window.
 * Other abilities on both sides will also require players to forgo actions
     * the solution for this is to do the following
@@ -22,7 +23,7 @@ There are several game systems that need to be changed/modified/added for onr to
 * Regions (and certain other cards) require the corp to have the rez credits handy already, and are rezzed when installed
 
 # ONR Implementation status
-There are currently 41/580 cards fully implemented, and 5/580 cards partially implemented.
+There are currently 53/580 cards fully implemented, and 5/580 cards partially implemented.
 
 # Why
 
