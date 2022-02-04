@@ -76,13 +76,9 @@ DOABLE:
   ONR Expert Schedule Analyzer (see executive wiretaps, post access)
   ONR False Echo (automate this, see blackguard)
   ONR Fortress Respecification (escher, but single server)
+  ONR Dupre (strength counter, mark servers)
   
 EASY:	  
-  ONR Dogcatcher
-  ONR Dupre
-  ONR Dwarf
-  ONR Edited Shipping Manifests (see siphon)
-  ONR Efficiency Experts (beanstalk)
   ONR Employee Empowerment  (see CSR campaign, calvin bailey)
   ONR Encoder, Inc. (see warden fatima)
   ONR Endless Corridor (see bastion)

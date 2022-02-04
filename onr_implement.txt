@@ -52,7 +52,11 @@ ONR Department of Truth Enhancement (See kati)
 ONR Detroit Police Contract (see SSL Endorsement)
 ONR Dieter Esslin (shock!)
 ONR Dermatech Bodyplating
-53
+ONR Dogcatcher
+ONR Dwarf
+ONR Edited Shipping Manifests (see siphon)
+ONR Efficiency Experts (beanstalk)
+57
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

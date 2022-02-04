@@ -1503,6 +1503,12 @@
     :effect (req (wait-for (gain-credits state side 1)
                            (draw state side eid 2)))}})
 
+(defcard "ONR Efficiency Experts"
+  {:on-play
+   {:msg "gain 3 [Credits]"
+    :async true
+    :effect (effect (gain-credits eid 3))}})
+
 (defcard "Oversight AI"
   {:on-play {:choices {:card #(and (ice? %)
                                    (not (rezzed? %))

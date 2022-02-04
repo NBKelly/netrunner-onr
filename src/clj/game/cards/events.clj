@@ -2235,6 +2235,24 @@
              :effect (effect (register-events
                               card [(breach-access-bonus :rd 2 {:duration :end-of-run})]))}]})
 
+(defcard "ONR Edited Shipping Manifests"
+  {:makes-run true
+   :on-play {:req (req hq-runnable)
+             :async true
+             :effect (effect (make-run eid :hq card))}
+   :events [(successful-run-replace-breach
+              {:target-server :hq
+               :this-card-run true
+               :mandatory true               
+               :ability
+               {:async true
+                :msg (msg "force the Corp to lose " (min 1 (:credit corp))
+                          " [Credits], gain " (* 10 (min 1 (:credit corp))))
+                :effect (req (if (pos? (:credit corp))
+                               (wait-for (gain-credits state :runner (* 10 (min 1 (:credit corp))))
+                                         (lose-credits state :corp eid (min 1 (:credit corp))))
+                               (breach-server state :runner eid [:hq] {:no-root false})))}})]})
+
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
                    :choices (req runnable-servers)

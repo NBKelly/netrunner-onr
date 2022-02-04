@@ -1908,6 +1908,19 @@
    {:abilities [(break-sub 2 1 "Code Gate")
                 (strength-pump 1 1)]}))
 
+(defcard "ONR Dogcatcher"
+  (auto-icebreaker
+   {:abilities [(break-sub 1 1 "Pit Bull")
+                (break-sub 1 1 "Hellhound")
+                (break-sub 1 1 "Bloodhound")
+                (break-sub 1 1 "Watchdog")
+                (strength-pump 1 1)]}))
+
+(defcard "ONR Dwarf"
+  (auto-icebreaker
+   {:abilities [(break-sub 1 1 "Wall")
+                (strength-pump 1 1)]}))
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"
