@@ -80,9 +80,6 @@ DOABLE:
   ONR Field Reporter for Ice and Data (corporate insider, but end of turn?)
   
 EASY:	  
-  ONR Fire Wall (ice wall)
-  ONR Flak (break AP)
-  ONR Floating Runner BBS (rezeki)
   ONR Force Shield (prevent 2 net/brain)
   ONR Forged Activation Orders (forged activation orders)
   ONR Forgotten Backup Chip (fetch from archives a program - de ja vu?)
