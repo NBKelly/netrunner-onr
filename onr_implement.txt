@@ -83,6 +83,7 @@ ONR Ice Pick Willie (rototurret)
 ONR Information Laundering (GRINDL refinery, 4 credits)
 ONR Inside Job (inside job)
 ONR Invisibility (cloak, 1 cred)
+ONR Jack'n'Joe (diesel)
 84
 
 PARTIAL IMPLEMENTATIONS:
