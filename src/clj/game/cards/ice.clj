@@ -2764,6 +2764,21 @@
   {:subroutines [trash-program-sub
                  end-the-run]})
 
+(defcard "ONR Keeper"
+  {:subroutines [end-the-run]})
+
+(defcard "ONR Laser Wire"
+  {:subroutines [(do-net-damage 1)
+                 end-the-run]})
+
+(defcard "ONR Liche"
+  {:subroutines [(do-brain-damage 1)
+                 (do-brain-damage 1)
+                 (do-brain-damage 1)
+                 end-the-run]})
+
+(defcard "ONR Mazer"
+  {:subroutines [end-the-run]})
 
 (defcard "Orion"
   (space-ice trash-program-sub

@@ -1509,6 +1509,21 @@
     :async true
     :effect (effect (gain-credits eid 3))}})
 
+(defcard "ONR Management Shake-Up"
+  (letfn [(shake-up [n]
+            (when (< n 3)
+              {:prompt "Choose a card on which to place an advancement"
+               :async true
+               :choices {:card can-be-advanced?
+                         :all true}
+               :msg (msg "place an advancement token on " (card-str state target))
+               :effect (req (add-prop state :corp target :advance-counter 1 {:placed true})
+                            (continue-ability state side (shake-up (inc n)) card nil))}))]
+    {:on-play
+     {:req (req (some can-be-advanced? (all-installed state :corp)))
+      :async true
+      :effect (req (continue-ability state side (audacity 0) card nil))}}))
+
 (defcard "Falsified-Transactions Expert"
   {:on-play
    {:prompt "Choose an installed card you can advance"

@@ -1934,7 +1934,7 @@
                                 (strength-pump 1 1)]}))
 
 (defcard "ONR Grubb"
-  (auto-icebreaker {:abilities [(break-sub 1 1 "Barrier")
+  (auto-icebreaker {:abilities [(break-sub 1 1 "Wall")
                                 (strength-pump 2 1 :end-of-run)]}))
 
 (defcard "ONR Imp"
@@ -1967,6 +1967,14 @@
                                                run))
                                 :type :recurring}}})
 
+(defcard "ONR Krash"
+  (auto-icebreaker
+   {:abilities [(break-sub 2 1)
+                (strength-pump 2 1)]}))
+
+(defcard "ONR Loony Goon"
+  (auto-icebreaker {:abilities [(break-sub 1 1 "Sentry")
+                                (strength-pump 1 1)]}))
 
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub

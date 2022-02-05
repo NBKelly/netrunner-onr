@@ -84,7 +84,22 @@ ONR Information Laundering (GRINDL refinery, 4 credits)
 ONR Inside Job (inside job)
 ONR Invisibility (cloak, 1 cred)
 ONR Jack'n'Joe (diesel)
-84
+ONR Karl de Veres, Corporate Stooge (desperado)
+ONR Keeper (ice wall)
+ONR Kilroy Was Here (demolition run but R&D?)
+ONR Krash (2 boost, 2 break any)
+ONR Laser Wire (envelope)
+ONR Leland, Corporate Bodyguard (1 to prevent meat, trash to aboid tag)
+ONR Liche (3x do 1 brain, end the run)
+ONR Livewire's Contacts (easy mark)
+ONR Loony Goon (1, 1, break sentry)
+ONR Lucidrine [TM] Booster Drug (verbatim stimhack)
+ONR Main-Office Relocation (agenda, +2 hand size, ref cybernetics court)
+ONR Management Shake-Up (audacity, but 3 counters, no discard)
+ONR Marine Arcology (that other double click for 3 card)
+ONR Mazer (end the run)
+ONR Militech MRAM Chip (+3 hand size, see beach party)
+100
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

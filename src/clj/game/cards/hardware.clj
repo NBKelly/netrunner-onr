@@ -1347,6 +1347,9 @@
 (defcard "ONR HQ Interface"
   {:events [(breach-access-bonus :hq 1)]})
 
+(defcard "ONR Militech MRAM Chip"
+  {:constant-effects [(mu+ 3)]})
+
 (defcard "Pantograph"
   (let [install-ability
         {:async true

@@ -2331,6 +2331,37 @@
     :async true
     :effect (effect (draw eid 3))}})
 
+(defcard "ONR Kilroy Was Here"
+  {:makes-run true
+   :on-play {:req (req rd-runnable)
+             :async true
+             :effect (effect (make-run eid :rd card))}
+   :interactions {:access-ability
+                  {:label "Trash card"
+                   :msg (msg "trash " (:title target) " at no cost")
+                   :async true
+                   :effect (effect (trash eid (assoc target :seen true) nil))}}})
+
+(defcard "ONR Livewire's Contacts"
+  {:on-play
+   {:msg "gain 3 [Credits]"
+    :async true
+    :effect (effect (gain-credits eid 3))}})
+
+(defcard "ONR Lucidrine [TM] Booster Drug"
+  {:makes-run true
+   :on-play {:prompt "Choose a server"
+             :choices (req runnable-servers)
+             :async true
+             :effect (effect (gain-next-run-credits 9)
+                             (make-run eid target card))}
+   :events [{:event :run-ends
+             :req (req this-card-run)
+             :msg "take 1 brain damage"
+             :effect (effect (damage eid :brain 1 {:unpreventable true
+                                                   :card card}))}]})
+
+
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
                    :choices (req runnable-servers)

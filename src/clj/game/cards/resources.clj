@@ -1875,6 +1875,26 @@
              :async true
              :effect (effect (gain-credits eid 1))}]})
 
+(defcard "ONR Karl de Veres, Corporate Stooge"
+  {:events [{:event :successful-run
+             :silent (req true)
+             :async true
+             :msg "gain 1 [Credits]"
+             :effect (effect (gain-credits eid 1))}]})
+
+(defcard "ONR Leland, Corporate Bodyguard"
+  {:interactions {:prevent [{:type #{:meat :tag}
+                             :req (req true)}]}    
+   :abilities [{:msg "avoid 1 tag"
+                :label "Avoid 1 tag"
+                :async true
+                :cost [:trash]
+                :effect (effect (tag-prevent :runner eid 1))}
+               {:label "prevent 1 meat damage"
+                :msg "prevent 1 meat damage"
+                :cost [:credit 1]
+                :effect (effect (damage-prevent :meat 1))}]})
+
 (defcard "Oracle May"
   {:abilities [{:cost [:click 1]
                 :label "name and reveal a card"

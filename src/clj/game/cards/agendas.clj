@@ -1244,6 +1244,19 @@
               :effect (req (gain-credits state side 5))
               :interactive (req true)}})
 
+(defcard "ONR Main-Office Relocation"
+  {:on-score {:silent (req true)
+              :msg "increase their maximum hand size by 2"}
+   :constant-effects [(corp-hand-size+ 2)]})
+
+(defcard "ONR Marine Arcology"
+  {:abilities [{:cost [:click 2]
+                :msg "gain 3 [Credits]"
+                :async true
+                :keep-open :while-2-clicks-left
+                :effect (effect (gain-credits eid 3))}]})
+
+
 (defcard "Paper Trail"
   {:on-score
    {:trace
