@@ -1635,6 +1635,18 @@
                          :req (req (and (ice? target)))
                          :value -1}]})
 
+(defcard "ONR Holovid Campaign"
+  (campaign 12 1))
+
+(defcard "ONR Information Laundering"
+  {:advanceable :always
+   :abilities [{:label "Gain 4 [Credits] for each advancement token on Information Laundering"
+                :cost [:click 1 :trash]
+                :msg (msg "gain " (* 4 (get-counters card :advancement)) " [Credits]")
+                :async true
+                :effect (effect (gain-credits eid (* 4 (get-counters card :advancement))))}]})
+
+
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)

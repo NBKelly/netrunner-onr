@@ -2303,6 +2303,34 @@
     :async true
     :effect (effect (move target :hand))}})
 
+(defcard "ONR Gideon's Pawnshop"
+  {:on-play
+   {:req (req (not (zone-locked? state :runner :discard)))
+    :prompt "Choose a card to add to Grip"
+    :choices (req (cancellable (:discard runner) :sorted))
+    :msg (msg "add " (:title target) " to their Grip")
+    :async true
+    :effect (effect (move target :hand))
+    }})
+
+(defcard "ONR Inside Job"
+  {:makes-run true
+   :on-play {:prompt "Choose a server"
+             :choices (req runnable-servers)
+             :async true
+             :effect (effect (make-run eid target card))}
+   :events [{:event :encounter-ice
+             :req (req (first-run-event? state side :encounter-ice))
+             :once :per-run
+             :msg (msg "bypass " (:title (:ice context)))
+             :effect (req (bypass-ice state))}]})
+
+(defcard "ONR Jack'n'Joe"
+  {:on-play
+   {:msg "draw 3 cards"
+    :async true
+    :effect (effect (draw eid 3))}})
+
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
                    :choices (req runnable-servers)

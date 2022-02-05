@@ -73,7 +73,17 @@ ONR Flak (break AP)
 ONR Floating Runner BBS (rezeki)
 ONR Forged Activation Orders (forged activation orders)
 ONR Fortress Architects (simple)
-74
+ONR Genetics-Visionary Acquisition (see the other diff reduction agenda)
+ONR Giden's Pawnshop (dejavu but less)
+ONR Grubb (Battering Ram)
+ONR Holovid Campaign (campaign 12 1)
+ONR Hostile Takeover (gain 5)
+ONR HQ Interface (HQ Interface)
+ONR Ice Pick Willie (rototurret)
+ONR Information Laundering (GRINDL refinery, 4 credits)
+ONR Inside Job (inside job)
+ONR Invisibility (cloak, 1 cred)
+84
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

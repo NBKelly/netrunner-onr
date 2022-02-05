@@ -1933,6 +1933,41 @@
   (auto-icebreaker {:abilities [(break-sub 1 1 "AP")
                                 (strength-pump 1 1)]}))
 
+(defcard "ONR Grubb"
+  (auto-icebreaker {:abilities [(break-sub 1 1 "Barrier")
+                                (strength-pump 2 1 :end-of-run)]}))
+
+(defcard "ONR Imp"
+  {:abilities [{:label "Install a program on Afreet"
+               :cost [:click 1]
+               :prompt "Choose a program in your Grip to install on Afreet"
+               :choices {:req (req (and (program? target)
+                                        (runner-can-install? state side target false)
+                                        (in-hand? target)))}
+               :msg (msg "host " (:title target))
+               :async true
+               :effect (effect (runner-install eid target {:host-card card :no-mu true}))}
+              {:label "Host an installed program on Afreet"
+               :prompt "Choose an installed program to host on Afreet"
+               :choices {:card #(and (program? %)
+                                     (installed? %))}
+               :msg (msg "host " (:title target))
+               :effect (effect (host card target)
+                               (unregister-effects-for-card target #(= :used-mu (:type %)))
+                               (update-mu))}]
+   :constant-effects [{:type :breaker-strength
+                       :req (req (some #{target} (:hosted card)))
+                       :value -1}]})
+
+(defcard "ONR Invisibility"
+  {:recurring 1
+   :interactions {:pay-credits {:req (req (and (= :ability (:source-type eid))
+                                               (has-subtype? target "Icebreaker")
+                                               (not (has-subtype? target "Noisy"))
+                                               run))
+                                :type :recurring}}})
+
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"

@@ -1344,6 +1344,9 @@
                 :once :per-turn
                 :effect (effect (damage-prevent :meat 1))}]})
 
+(defcard "ONR HQ Interface"
+  {:events [(breach-access-bonus :hq 1)]})
+
 (defcard "Pantograph"
   (let [install-ability
         {:async true

@@ -2760,6 +2760,10 @@
 (defcard "ONR Fire Wall"
   {:subroutines [end-the-run]})
 
+(defcard "ONR Ice Pick Willie"
+  {:subroutines [trash-program-sub
+                 end-the-run]})
+
 
 (defcard "Orion"
   (space-ice trash-program-sub

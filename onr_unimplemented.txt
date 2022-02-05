@@ -1,4 +1,5 @@
 LINK CARDS:
+
   ONR Access through Alpha
   ONR Access through Arasaka
   ONR Access through Kiribati
@@ -8,16 +9,20 @@ LINK CARDS:
   ONR Bakdoor [TM]
 
 FLOATING EFFECTS:
+
   ONR ACME Savings and Loan
   ONR Emergency Self-Construct (immune to meat, hand size, actions changed)
   
 PAY AGENDA POINTS:
+
   ONR Arasaka Portable Prototype
   ONR Corporate Ally
   ONR Databroker
   ONR Diplomatic Immunity (See papparazi, blank card)
+  ONR I Got a Rock (boom ability, but 15 damage, pay 3 agenda points)
   
 ONR TOKEN CARDS:
+
   ONR Aardvark
   ONR Boardwalk
   ONR Butcher Boy
@@ -30,8 +35,13 @@ ONR TOKEN CARDS:
   ONR Deep Thought
   ONR Disingectant, Inc (virus on corp)
   ONR Fair Accompli  
+  ONR Gremlins
+  ONR I Spy
+  ONR Incubator
+  ONR Mastiff
   
 ODD CARDS:
+
   ONR Arasaka Owns You
   ONR Asp (see excalibur - flag needs to exist until the runner clicks for a credit)
   ONR Bizarre Encryption Scheme (idk how on earth to do this?)
@@ -39,23 +49,47 @@ ODD CARDS:
   ONR Corporate Retreat (blank card trigger)
   ONR Crash Everett, Inventive Fixer
   ONR Data Fort Reclamation (tmp credits)
-  
+  ONR Lifesaver [TM] Nanosurgeons (draw 2 if damaged in last 3 actions, prevent 1 brain)
+  ONR Loan from Chiba (pay 10 when it leaves play, or lose the game)
+  ONR Microtech 'Trode Set (1 extra per breaking ice, ignore all AP subs except tracers and net, prevent all but 1 net from each ap subroutine)
+  ONR Mystery Box (? ? ?)
+  ONR Netspace Inverter (invert ice on a server directly after running it)
+
 REQUIRES ONR TRACES:
+
   ONR Audit of Call Records (need to be able to count runs made last turn)
   ONR Blood Cat
   ONR Chance Observation (ref: SEA SourcE)
   ONR Cinderella (ref: flare)
   ONR Fetch 4.0.1. (hunter)
-
+  ONR Fragmentation Storm
+  ONR Hacker Tracker Central (add a credit after a trace, credits increase link limit)
+  ONR Hell's Run (credit for link cards)
+  ONR Homewrecker [TM]
+  ONR Hunter (trace 5, tag)
+  ONR Jack Attac
+  ONR Krumz (1 credit for traces)
+  
 REQUIRES REGION RULES:
+
   ONR Crystal Palace Station Grid (ref midway station)
+  ONR Jerusalem City Grid (wall cost -2, +1 str)
+  ONR Namatoki Plaza (? ??)
+
+NEATO Lookers:
+
+ONR N.E.T.O. (look at top x, pay 1 per prep/resource to bring to hand - find a generic way to do this)
 
 RESTRICTED ACTIONS:
+
   ONR Edgrerunner, INc., Temps
   ONR Fang (easy ice, disable run until ability used on breaker? floating effect?)
   ONR Fang 2.0 (easy ice, disable run until ability used on breaker? floating effect?)
+  ONR Haunting Inquisition (no run for 6 actions)
+  ONR Japanese Water Torture (forgo actions on breaking)
   
 DOABLE:
+
   ONR All-Nighter (note - doppleganger, always have a backup plan)
   ONR Aujourd'Oui (look at frantic coding + bacterial programming)
   ONR Ball and Chain (look at toll booth, armored servers?)
@@ -69,7 +103,6 @@ DOABLE:
   ONR Chimera (ref: aggressive secretery, shock!)
   ONR Corporate Negotiating Center (celeb gift + start of turn)  
   ONR Desperate Competitor (see notoriety, archivist)
-
   ONR Dr. Dreff (see awakening center)
   ONR Dropp (see crypsis, ?)
   ONR Encryption Breakthrough (reveal on board x)
@@ -78,10 +111,50 @@ DOABLE:
   ONR Dupre (strength counter, mark servers)
   ONR Evil Twin (prevent damage twice, sentry breaker)
   ONR Field Reporter for Ice and Data (corporate insider, but end of turn?)
-  ONR Force Shield (prevent 2 net/brain)  
-EASY:	  
+  ONR Force Shield (prevent 2 net/brain)
+  ONR Full Body Conversion (cost to do meat damage +1)
+  ONR Hammer (lose credits from stealth)
+  ONR Hot Tip for WNS (gain 1 agenda point if black ops stolen)
+  ONR Ice and Data's Guide to the Net (expose outmost on each server)
+  ONR Ice Transmutation (choose an ICE, double subs, add 1 strength (permanently))
+  ONR Investment Firm (Pad Campaign add credits card sort of)
+  ONR Jackhammer (lose credits from stealth)
+  ONR Jenny Jett (this does exactly what mti mwekundo did, but costs)
+  ONR Joan of Arc (prevent trash, add to hand like birds)
+  ONR Junkyard BBS (requires trash ordered, bring top card of trash back)
+  ONR Kilroy Was Here (demolition run but R&D?)
+  ONR Microtech AI Interface (before access, cut any number of cards to the bottom or R&D)
+  ONR Microtech Backup Drive (whenever an installed program is trashed, you may add put it on TOP of microtech backup drive. You may spend an action to put the top card into hand)
+ONR Hunt Club BBS (expose 3)
+  ONR If You Want It Done Right... (look at 5, add 1 to hand)
+EASY:
+
+ONR Karl de Veres, Corporate Stooge (desperado)
+ONR Keeper (ice wall)
+ONR Krash (2 boost, 2 break any)
+ONR Laser Wire (envelope)
+ONR Leland, Corporate Bodyguard (1 to prevent meat, trash to aboid tag)
+ONR Liche (3x do 1 brain, end the run)
+ONR Livewire's Contacts (easy mark)
+ONR Loony Goon (1, 1, break sentry)
+ONR Lucidrine [TM] Booster Drug (verbatim stimhack)
+ONR Main-Office Relocation (agenda, +2 hand size, ref cybernetics court)
+ONR Management Shake-Up (audacity, but 3 counters, no discard)
+ONR Mantis, Fixer-at-Large (find a card from your stack)
+ONR Marine Arcology (that other double click for 3 card)
+ONR Mazer (end the run)
+ONR Militech MRAM Chip (+3 hand size, see beach party)
+ONR misc.for-sale (aesops as an event but repeatable)
+ONR MIT West Tier (levy AR Lab Access)
+ONR Mouse (expose within a server)
+ONR MRAM Chip (Hand Size +2)
+ONR Nasuko Cycle (3 to avoid tag)
+ONR Nerve Labyrinth (Envelope + 1)
+ONR Netwatch Credit Voucher (big brother, 1 tag 1 cred)
 
 
-continue from: base/Fortress ArchitectsEvil Twin
-scan from: base/fragmentation storm
+
+
+continue from: base/Fortress Architects
+scan from: base/Netwatch Credit Voucher
 

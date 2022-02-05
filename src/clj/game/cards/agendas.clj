@@ -1232,6 +1232,18 @@
                                       (has-subtype? target "Gray Ops")))
                        :value -1}]})
 
+(defcard "ONR Genetics-Visionary Acquisition"
+  {:constant-effects [{:type :advancement-requirement
+                       :req (req (and (agenda? target)
+                                      (has-subtype? target "Research")))
+                       :value -1}]})
+
+(defcard "ONR Hostile Takeover"
+  {:on-score {:msg "gain 5"
+              :async true
+              :effect (req (gain-credits state side 5))
+              :interactive (req true)}})
+
 (defcard "Paper Trail"
   {:on-score
    {:trace
