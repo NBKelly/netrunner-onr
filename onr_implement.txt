@@ -15,7 +15,8 @@ COMPLETED WITH TESTS:
   ONR Nasuko Cycle (3 to avoid tag, nach but more busted)
   ONR Nerve Labyrinth (2 net, etr subs)
   ONR Netwatch Credit Voucher (give tag + gain cred if runner is tagged)
-  
+
+  16  	       (@lc - 3)
 PARTIALLY TESTED:
   
 NEEDS TESTS:
@@ -112,7 +113,7 @@ ONR Marine Arcology (that other double click for 3 card)
 ONR Mazer (end the run)
 ONR Militech MRAM Chip (+3 hand size, see beach party)
 ONR AI Boon (Not sure how to test this one properly?)
-106 	     (@LC-6)
+109 	     (@LC-7)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

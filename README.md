@@ -23,7 +23,18 @@ There are several game systems that need to be changed/modified/added for onr to
 * Regions (and certain other cards) require the corp to have the rez credits handy already, and are rezzed when installed
 
 # ONR Implementation status
-There are currently 72/580 cards fully implemented, and 6/580 cards partially implemented.
+
+* Base Set
+  * 374 cards total
+  * 109 full implementations
+  * 7 partial implementations
+  * tests complete for 16/116 implemented cards
+* Proteus Set
+  * 154 cards total
+* Classic Set
+  * 52 cards total
+
+Total: 116/580 cards implemented.
 
 # Why
 
