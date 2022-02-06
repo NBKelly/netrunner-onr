@@ -1522,7 +1522,7 @@
     {:on-play
      {:req (req (some can-be-advanced? (all-installed state :corp)))
       :async true
-      :effect (req (continue-ability state side (audacity 0) card nil))}}))
+      :effect (req (continue-ability state side (shake-up 0) card nil))}}))
 
 (defcard "Falsified-Transactions Expert"
   {:on-play

@@ -1,9 +1,13 @@
+COMPLETED WITH TESTS:
+  ONR "Drifter" Mobile Environment (tests pay to remove tags)
+  ONR "Green Knight" Surge Buffers (prevents 1 net each turn (not necessarily the first))
+  ONR Accounts Receivable (see hedge fund)
+  ONR Afreet (MU and -str both work)
+  
+PARTIALLY TESTED:
+  ONR "Armadillo" Armored Road Home (tests removing tags, needs a prevent-meat test)
+  
 NEEDS TESTS:
-ONR "Armadillo" Armored Road Home (needs tests - see crash space)
-ONR "Drifter" Mobile Environment (needs tests)
-ONR "Green Knight" Surge Buffers (needs tests - prevents 1 net)
-ONR Accounts Receivable (tests - see hedge fund)
-ONR Afreet (tests see dinosaurus and leprechaun)
 ONR AI Chief Financial Officer (tests see levy AR lab access)
 ONR Annual Reviews (tests - see ANR Anonymous Tip)
 ONR Antiquated Interface Routines (tests - see midori, lag time)
@@ -99,7 +103,7 @@ ONR Management Shake-Up (audacity, but 3 counters, no discard)
 ONR Marine Arcology (that other double click for 3 card)
 ONR Mazer (end the run)
 ONR Militech MRAM Chip (+3 hand size, see beach party)
-100
+100 	     (@LC+6)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
