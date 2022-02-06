@@ -3162,6 +3162,13 @@
      (click-prompt state :runner "Done")
      (is (= 2 (count (:hand (get-runner))))))))
 
+(deftest onr-mram-chip
+  ;; MRAM Chip
+  (do-game
+   (new-game {:runner {:hand ["ONR MRAM Chip"]}})
+   (take-credits state :corp)
+   (play-from-hand state :runner "ONR MRAM Chip")
+   (is (= 7 (hand-size :runner)) "Increased hand size")))
 
 (deftest omni-drive-pay-credits-prompt
     ;; Pay-credits prompt

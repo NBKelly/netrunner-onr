@@ -7,7 +7,9 @@ COMPLETED WITH TESTS:
   ONR Annual Reviews (draws 3)
   ONR misc.for-sale (liquidation for the runner - trash cards to gain 3c each)
   ONR MIT West Tier (levy AR Lab Access)
-
+  ONR Mouse (expose in a server, only rezzed cards)
+  ONR MRAM Chip (Hand Size +2)
+  
 PARTIALLY TESTED:
   ONR "Armadillo" Armored Road Home (tests removing tags, needs a prevent-meat test)
   
@@ -107,7 +109,7 @@ ONR Marine Arcology (that other double click for 3 card)
 ONR Mazer (end the run)
 ONR Militech MRAM Chip (+3 hand size, see beach party)
 ONR AI Boon (Not sure how to test this one properly?)
-102 	     (@LC-6)
+106 	     (@LC-6)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

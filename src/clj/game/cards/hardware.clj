@@ -1350,6 +1350,11 @@
 (defcard "ONR Militech MRAM Chip"
   {:constant-effects [(mu+ 3)]})
 
+(defcard "ONR MRAM Chip"
+  {:constant-effects [{:type :hand-size
+                       :req (req (= :runner side))
+                       :value 2}]})
+
 (defcard "Pantograph"
   (let [install-ability
         {:async true

@@ -4425,6 +4425,24 @@
           (is (= 0 (get-strength (refresh marj)))
               "Afreet giving -1 strength to MarjanahBattering Ram")))))
 
+(deftest onr-mouse
+  (do-game
+   (new-game {:runner {:hand ["ONR Mouse"]}
+              :corp {:hand ["Rashida Jaheem" "PAD Campaign"]}})
+   (play-from-hand state :corp "PAD Campaign" "New remote")
+   (play-from-hand state :corp "Rashida Jaheem" "New remote")
+   (let [pad (get-content state :remote1 0)
+         rashida (get-content state :remote2 0)]
+     (rez state :corp rashida)
+     (take-credits state :corp)
+     (play-from-hand state :runner "ONR Mouse")
+     (let [mouse (get-program state 0)]
+       (card-ability state :runner mouse 0)
+       (click-card state :runner rashida)
+       (is (not (no-prompt? state :runner)) "Mouse exposed the rezzed card")
+       (click-card state :runner pad)
+       (is (no-prompt? state :runner) "Mouse should expose PAD Campaign")))))
+                            
 (deftest origami
   ;; Origami - Increases Runner max hand size
   (do-game

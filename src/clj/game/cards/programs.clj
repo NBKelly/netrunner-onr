@@ -1976,6 +1976,15 @@
   (auto-icebreaker {:abilities [(break-sub 1 1 "Sentry")
                                 (strength-pump 1 1)]}))
 
+(defcard "ONR Mouse"
+  {:abilities [{:cost [:click 1]
+                :choices {:card #(let [topmost (get-nested-host %)]
+                                   (and (is-remote? (second (get-zone topmost)))
+                                        (not (rezzed? %))
+                                        (= (last (get-zone topmost)) :content)))}
+                :effect (effect (expose eid target))
+                :msg "expose a card inside a fort"}]})
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"

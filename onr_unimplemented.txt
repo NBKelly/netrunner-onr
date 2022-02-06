@@ -127,10 +127,7 @@ ONR Hunt Club BBS (expose 3)
   ONR If You Want It Done Right... (look at 5, add 1 to hand)
   ONR Mantis, Fixer-at-Large (find a card from your stack)  
 EASY:
-ONR misc.for-sale (aesops as an event but repeatable)
-ONR MIT West Tier (levy AR Lab Access)
-ONR Mouse (expose within a server)
-ONR MRAM Chip (Hand Size +2)
+
 ONR Nasuko Cycle (3 to avoid tag)
 ONR Nerve Labyrinth (Envelope + 1)
 ONR Netwatch Credit Voucher (big brother, 1 tag 1 cred)
