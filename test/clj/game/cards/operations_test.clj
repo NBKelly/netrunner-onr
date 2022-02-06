@@ -2635,6 +2635,17 @@
     (is (= 3 (count (:hand (get-corp)))) "Corp should draw 3 cards")
     (is (= 1 (count (:discard (get-corp)))) "Corp has 1 card in Archives")))
 
+(deftest onr-netwatch-credit-voucher
+  ;; Netwatch Credit Voucher - Give the Runner 1 tags, gain 1c
+  (do-game
+    (new-game {:corp {:deck ["ONR Netwatch Credit Voucher"]}})
+    (play-from-hand state :corp "ONR Netwatch Credit Voucher")
+    (is (= 1 (count (:hand (get-corp)))) "Card not played because Runner has no tags")
+    (gain-tags state :runner 1)
+    (play-from-hand state :corp "ONR Netwatch Credit Voucher")
+    (is (= 2 (count-tags state)) "Runner gained a tag")
+    (is (= 6 (:credit (get-corp))) "Gained 1c from credit voucher")))
+
 (deftest oversight-ai-rez-at-no-cost
     ;; Rez at no cost
     (do-game

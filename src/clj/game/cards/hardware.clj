@@ -1355,6 +1355,14 @@
                        :req (req (= :runner side))
                        :value 2}]})
 
+(defcard "ONR Nasuko Cycle"
+  {:interactions {:prevent [{:type #{:tag}
+                             :req (req true)}]}
+   :abilities [{:async true
+                :cost [:credit 3]
+                :msg "avoid 1 tag"
+                :effect (effect (tag-prevent :runner eid 1))}]})
+
 (defcard "Pantograph"
   (let [install-ability
         {:async true

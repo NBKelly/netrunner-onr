@@ -3126,6 +3126,23 @@
                            (click-card state :runner cs)
                            (click-card state :runner cs)))))
 
+(deftest onr-armadillo-prevent-meat
+  ;;prevents up to 3 meat damage
+  (do-game
+   (new-game {:runner {:hand ["ONR \"Armadillo\" Armored Road Home" "Sure Gamble" "Sure Gamble"]}
+              :corp {:hand ["Scorched Earth"]}})
+   (take-credits state :corp)
+   (play-from-hand state :runner "ONR \"Armadillo\" Armored Road Home")
+   (gain-tags state :corp 1)
+   (take-credits state :runner)
+   (let [cs (get-hardware state 0)]
+     (play-from-hand state :corp "Scorched Earth")
+     (card-ability state :runner cs 0)
+     (click-prompt state :runner "Done")
+     (is (= 1 (count (:hand (get-runner)))) "Armadillo used, 1 damage taken")
+     (is (empty? (get-hardware state)) "Armadillo trashed"))))
+     
+
 (deftest onr-drifter-pay-credits
     ;; Pay-credits prompt
     (do-game
@@ -3169,6 +3186,54 @@
    (take-credits state :corp)
    (play-from-hand state :runner "ONR MRAM Chip")
    (is (= 7 (hand-size :runner)) "Increased hand size")))
+
+
+(deftest onr-armored-fridge
+  ;; Armored Fridge - Prevent meat damage (1 counter/meat, 7 'ablative' counters)
+  (do-game
+    (new-game {:corp {:deck ["Scorched Earth" "Scorched Earth"]}
+               :runner {:deck ["ONR Armored Fridge" "Sure Gamble"]}})
+    (take-credits state :corp)
+    (play-from-hand state :runner "ONR Armored Fridge")
+    (let [oaf (get-hardware state 0)]
+      (is (= 7 (get-counters (refresh oaf) :power)) "7 counters on install")
+      (take-credits state :runner)
+      (gain-tags state :runner 1)
+      (play-from-hand state :corp "Scorched Earth")
+      (card-ability state :runner oaf 0)
+      (card-ability state :runner oaf 0)
+      (card-ability state :runner oaf 0)
+      (card-ability state :runner oaf 0)
+      (is (= 1 (count (:hand (get-runner)))) "All meat damage prevented")
+      (is (= 3 (get-counters (refresh oaf) :power)) "3 counters left on fridge")
+      (play-from-hand state :corp "Scorched Earth")
+      (card-ability state :runner oaf 0)
+      (card-ability state :runner oaf 0)
+      (card-ability state :runner oaf 0)
+      (click-prompt state :runner "Done")
+      (is (= 0 (count (:hand (get-runner)))) "All counters used, 1 damage taken")
+      (is (empty? (get-hardware state)) "Armored fridge depleted and trashed"))))
+
+(deftest onr-nasuko-cycle
+  ;; Nasuko Cycle - Avoid tags for 3c each
+  (do-game
+      (new-game {:corp {:deck ["SEA Source"]}
+                 :runner {:deck ["ONR Nasuko Cycle"]
+                          :credits 8}})
+      (take-credits state :corp)
+      (play-from-hand state :runner "ONR Nasuko Cycle")
+      (let [nasu (get-hardware state 0)]
+        (run-empty-server state "Archives")
+        (take-credits state :runner)
+        (is (= 9 (:credit (get-runner))))
+        (play-from-hand state :corp "SEA Source")
+        (click-prompt state :corp "0") ; default trace
+        (click-prompt state :runner "0") ; Runner won't match
+        (card-ability state :runner nasu 0)
+        (click-prompt state :runner "Done")
+        (is (zero? (count-tags state)) "Avoided SEA Source tag")
+        (is (= 6 (:credit (get-runner))) "Paid 3 credits"))))
+
 
 (deftest omni-drive-pay-credits-prompt
     ;; Pay-credits prompt

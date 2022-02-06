@@ -4466,6 +4466,23 @@
         (is (= 3 (get-counters (refresh odu) :advancement)))
         (is (= 6 (get-counters (refresh eni) :advancement))))))
 
+(deftest onr-nerve-labyrinth
+  ;; Envelope - do 1 net damage, end the run
+  (do-game
+    (new-game {:corp {:deck ["ONR Nerve Labyrinth"]}})
+    (play-from-hand state :corp "ONR Nerve Labyrinth" "HQ")
+    (take-credits state :corp)
+    (let [envl (get-ice state :hq 0)]
+      (run-on state "HQ")
+      (rez state :corp envl)
+      (run-continue state)
+      (is (zero? (count (:discard (get-runner)))) "No discarded cards")
+      (card-subroutine state :corp envl 0)
+      (is (= 2 (count (:discard (get-runner)))) "2 cards in discard pile")
+      (is (:run @state) "Run still ongoing")
+      (card-subroutine state :corp envl 1)
+      (is (not (:run @state)) "Run ended"))))
+
 (deftest otoroshi
   ;; Otoroshi
   (do-game

@@ -9,13 +9,16 @@ COMPLETED WITH TESTS:
   ONR MIT West Tier (levy AR Lab Access)
   ONR Mouse (expose in a server, only rezzed cards)
   ONR MRAM Chip (Hand Size +2)
+  ONR Antiquated Interface Routines (+1 ICE strength on server)
+  ONR Armored Fridge (plascrete with 7 counters)
+  ONR "Armadillo" Armored Road Home (recurring credits, prevent meat damage)
+  ONR Nasuko Cycle (3 to avoid tag, nach but more busted)
+  ONR Nerve Labyrinth (2 net, etr subs)
+  ONR Netwatch Credit Voucher (give tag + gain cred if runner is tagged)
   
 PARTIALLY TESTED:
-  ONR "Armadillo" Armored Road Home (tests removing tags, needs a prevent-meat test)
   
 NEEDS TESTS:
-ONR Antiquated Interface Routines (tests - see midori, lag time)
-ONR Armored Fridge (tests - see plascrete)
 ONR Artemis 2020 (tests - see any console, multithreader)
 ONR Artificial Security Directors (for tests, see sansan city grid)
 ONR Banpei (literally just rototurret)

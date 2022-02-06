@@ -1524,6 +1524,14 @@
       :async true
       :effect (req (continue-ability state side (shake-up 0) card nil))}}))
 
+(defcard "ONR Netwatch Credit Voucher"
+  {:on-play
+   {:req (req tagged)
+    :msg "give the Runner a tag and gain 1 [Credits]"
+    :async true
+    :effect (req (wait-for (gain-tags state :corp (make-eid state eid) 1)
+                           (gain-credits state :corp eid 1)))}})
+
 (defcard "Falsified-Transactions Expert"
   {:on-play
    {:prompt "Choose an installed card you can advance"

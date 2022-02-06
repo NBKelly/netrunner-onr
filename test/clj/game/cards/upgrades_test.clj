@@ -2837,6 +2837,29 @@
       (is (= ["Steal"] (prompt-buttons :runner)))
       (click-prompt state :runner "Steal")))
 
+(deftest onr-antiquated-interface-routines
+  ;; ONR Antiquated Interface Routines
+  (do-game
+    (new-game {:corp {:deck ["ONR Antiquated Interface Routines" "Gutenberg" "Vanilla"
+                             "Jackson Howard" "Hedge Fund"]
+                      :credits 10}})
+    (play-from-hand state :corp "ONR Antiquated Interface Routines" "R&D")
+    (play-from-hand state :corp "Gutenberg" "R&D")
+    (play-from-hand state :corp "Vanilla" "R&D")
+    (take-credits state :corp)
+    (run-on state "R&D")
+    (is (:run @state))
+    (let [air (get-content state :rd 0)
+          gutenberg (get-ice state :rd 0)
+          vanilla (get-ice state :rd 1)]      
+      (rez state :corp gutenberg)
+      (rez state :corp vanilla)
+      (is (= 6 (get-strength (refresh gutenberg))))
+      (is (zero? (get-strength (refresh vanilla))))
+      (rez state :corp air)
+      (is (= 7 (get-strength (refresh gutenberg))))
+      (is (= 1 (get-strength (refresh vanilla)))))))
+      
 (deftest overseer-matrix-basic-functionality
     ;; Basic functionality
     (do-game

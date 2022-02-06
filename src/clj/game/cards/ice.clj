@@ -2780,6 +2780,10 @@
 (defcard "ONR Mazer"
   {:subroutines [end-the-run]})
 
+(defcard "ONR Nerve Labyrinth"
+  {:subroutines [(do-net-damage 2)
+                 end-the-run]})
+
 (defcard "Orion"
   (space-ice trash-program-sub
              (resolve-another-subroutine)
