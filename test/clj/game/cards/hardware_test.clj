@@ -3112,6 +3112,57 @@
       (play-from-hand state :runner "Paper Tripping")
       (is (zero? (count-tags state)) "Runner loses all tags")))
 
+(deftest onr-armadillo-pay-credits
+    ;; Pay-credits prompt
+    (do-game
+      (new-game {:runner {:deck ["ONR \"Armadillo\" Armored Road Home"]}})
+      (take-credits state :corp)
+      (play-from-hand state :runner "ONR \"Armadillo\" Armored Road Home")
+      (gain-tags state :corp 1)
+      (let [cs (get-hardware state 0)]
+        (changes-val-macro 0 (:credit (get-runner))
+                           "Used 2 credit from Armadillo"
+                           (remove-tag state :runner)
+                           (click-card state :runner cs)
+                           (click-card state :runner cs)))))
+
+(deftest onr-drifter-pay-credits
+    ;; Pay-credits prompt
+    (do-game
+      (new-game {:runner {:deck ["ONR \"Drifter\" Mobile Environment"]}})
+      (take-credits state :corp)
+      (play-from-hand state :runner "ONR \"Drifter\" Mobile Environment")
+      (gain-tags state :corp 1)
+      (let [cs (get-hardware state 0)]
+        (changes-val-macro 0 (:credit (get-runner))
+                           "Used 2 credit from Drifter"
+                           (remove-tag state :runner)
+                           (click-card state :runner cs)
+                           (click-card state :runner cs)))))
+
+(deftest onr-green-knight-prevent-net
+  ;; Feedback Filter - Prevent net and brain damage
+  (do-game
+   (new-game {:corp {:deck ["Neural EMP"
+                            "Neural EMP"
+                            "Neural EMP"]}
+              :runner {:deck [(qty "Sure Gamble" 4) (qty "ONR \"Green Knight\" Surge Buffers" 1)]}})
+   (take-credits state :corp)
+   (play-from-hand state :runner "ONR \"Green Knight\" Surge Buffers")
+   (run-empty-server state "Archives")
+   (take-credits state :runner)
+   (let [cs (get-hardware state 0)]
+     (play-from-hand state :corp "Neural EMP")
+     (click-prompt state :runner "Done")
+     (is (= 3 (count (:hand (get-runner)))))
+     (play-from-hand state :corp "Neural EMP")
+     (card-ability state :runner cs 0)     
+     (is (= 3 (count (:hand (get-runner)))))
+     (play-from-hand state :corp "Neural EMP")
+     (click-prompt state :runner "Done")
+     (is (= 2 (count (:hand (get-runner))))))))
+
+
 (deftest omni-drive-pay-credits-prompt
     ;; Pay-credits prompt
     (do-game

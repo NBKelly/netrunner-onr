@@ -2617,6 +2617,13 @@
     (is (zero? (count-tags state)) "Runner should lose 1 tag")
     (is (not (get-resource state 0)) "Kati should be trashed")))
 
+(deftest onr-accounts-receivable
+  (do-game
+    (new-game {:corp {:hand ["ONR Accounts Receivable"]}})
+    (is (= 5 (:credit (get-corp))))
+    (play-from-hand state :corp "ONR Accounts Receivable")
+    (is (= 9 (:credit (get-corp))))))
+
 (deftest oversight-ai-rez-at-no-cost
     ;; Rez at no cost
     (do-game

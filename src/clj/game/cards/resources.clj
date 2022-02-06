@@ -1895,6 +1895,70 @@
                 :cost [:credit 1]
                 :effect (effect (damage-prevent :meat 1))}]})
 
+(defcard "ONR Loan from Chiba"
+  ;; allow ordering with drip cards
+  {:flags {:runner-phase-12 (req (some #(card-flag? % :drip-economy true) (all-active-installed state :runner)))}
+   ;; lose 1 credit at start of turn
+   :events [{:event :runner-turn-begins
+             :msg (msg "lose " (if (zero? (get-in @state [:runner :credit]))
+                                 "0 [Credits] (runner has no credits to lose)"
+                                 "1 [Credits]"))
+             :once :per-turn
+             :async true
+             :effect (effect (lose-credits eid 1))}
+            ;; allow trash at end of turn
+            {:event :runner-turn-ends
+             :interactive (get-autoresolve :auto-fire (complement never?))
+             :silent (get-autoresolve :auto-fire never?)
+             :optional {:waiting-prompt "Runner to decide to trash ONR Loan from Chiba"
+                        :prompt "Trash ONR Loan from Chiba?"
+                        :player :runner
+                        :autoresolve (get-autoresolve :auto-fire)
+                        :yes-ability {:msg "trash ONR Loan from Chiba"
+                                      :async true
+                                      :effect (effect (trash eid card {:cause :runner-ability}))}
+                        :no-ability {:effect (effect (system-msg "chooses not to trash ONR Loan from Chiba"))}}}]
+   ;; gain 12 credits when installed
+   :on-install {:async true
+                :msg "gain 12 [Credits]"
+                :effect (effect (gain-credits eid 12))}
+   :abilities [;; set autoresolve
+               (set-autoresolve :auto-fire "ONR Loan from Chiba")
+               ;; manually lose 1 credit (for ordering)
+               {:label "Lose 1 [Credits] (start of turn)"
+                :msg (msg (if (zero? (get-in @state [:runner :credit]))
+                            "lose 0 [Credits] (runner has no credits to lose)"
+                            "lose 1 [Credits]"))
+                :req (req (:runner-phase-12 @state))
+                :once :per-turn
+                :async true
+                :effect (effect (lose-credits eid 1))}]
+   ;; when chiba leaves play, runner pays 10 or loses
+   :uninstall (effect
+               (continue-ability
+                {:player :runner
+                 :async true
+                 :waiting-prompt "Runner to choose an option"
+                 :prompt "Pay 10 to avoid losing the game?"                 
+                 :effect (req
+                          (clear-wait-prompt state :corp)
+                          (if (= target "Pay 10")
+                            (wait-for (pay state side (make-eid state eid) card [:credit 10])
+                                      (system-msg state side
+                                                  (str "pays 10 to avoid losing the game due to ONR Loan from Chiba"))
+                                      (complete-with-result state side eid card))
+                            (do
+                              (system-msg state side "loses the game after being unable to repay ONR Loan from Chiba")
+                              (win state :corp "Chiba eliminating the competition")
+                              (complete-with-result state side eid card))))
+                 ;; only offer payment choice if it can be made
+                 :choices (req (if (can-pay? state :runner (assoc eid :source card
+                                                                  :source-type :ability)
+                                             card (:title target) [:credit 10])
+                                 ["Pay 10" "Lose the game"]
+                                 ["Lose the game"]))}
+                card nil))})
+
 (defcard "Oracle May"
   {:abilities [{:cost [:click 1]
                 :label "name and reveal a card"

@@ -4403,6 +4403,29 @@
                            "Paid 3 to pump and 0 to break"
                            (core/play-dynamic-ability state :runner {:dynamic "auto-pump-and-break" :card (refresh odore)})))))
 
+(deftest onr-afreet
+    ;; Keep MU the same when hosting or trashing hosted programs
+    (do-game
+      (new-game {:runner {:deck ["ONR Afreet" "Marjanah" "Imp"]}})
+      (take-credits state :corp)
+      (play-from-hand state :runner "ONR Afreet")
+      (let [afreet (get-program state 0)]
+        (card-ability state :runner afreet 0)
+        (click-card state :runner (find-card "Marjanah" (:hand (get-runner))))
+        (is (= 2 (:click (get-runner))))
+        (is (= 3 (:credit (get-runner))))
+        (is (= 3 (core/available-mu state)) "Marjanah MU not deducted from available MU")
+        (card-ability state :runner afreet 0)
+        (click-card state :runner (find-card "Imp" (:hand (get-runner))))
+        (is (= 1 (:click (get-runner))))
+        (is (= 1 (:credit (get-runner))))
+        (is (= 3 (core/available-mu state)) "Imp 1 MU not deducted from available MU")        
+        ;; check marjanah str
+        (let [marj (first (:hosted (refresh afreet)))]
+          (is (= 0 (get-strength (refresh marj)))
+              "Afreet giving -1 strength to MarjanahBattering Ram")))))
+
+
 (deftest origami
   ;; Origami - Increases Runner max hand size
   (do-game

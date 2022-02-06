@@ -50,7 +50,6 @@ ODD CARDS:
   ONR Crash Everett, Inventive Fixer
   ONR Data Fort Reclamation (tmp credits)
   ONR Lifesaver [TM] Nanosurgeons (draw 2 if damaged in last 3 actions, prevent 1 brain)
-  ONR Loan from Chiba (pay 10 when it leaves play, or lose the game)
   ONR Microtech 'Trode Set (1 extra per breaking ice, ignore all AP subs except tracers and net, prevent all but 1 net from each ap subroutine)
   ONR Mystery Box (? ? ?)
   ONR Netspace Inverter (invert ice on a server directly after running it)
