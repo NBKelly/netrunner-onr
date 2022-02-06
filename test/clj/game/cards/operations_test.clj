@@ -2624,6 +2624,17 @@
     (play-from-hand state :corp "ONR Accounts Receivable")
     (is (= 9 (:credit (get-corp))))))
 
+(deftest onr-annual-reviews
+  ;; Annual Reviews
+  (do-game
+    (new-game {:corp {:deck [(qty "Hedge Fund" 5)]
+                      :hand ["ONR Annual Reviews"]}})
+    (is (= 1 (count (:hand (get-corp)))) "Corp starts with 1 card in HQ")
+    (is (zero? (count (:discard (get-corp)))) "Corp starts with 0 cards in Archives")
+    (play-from-hand state :corp "ONR Annual Reviews")
+    (is (= 3 (count (:hand (get-corp)))) "Corp should draw 3 cards")
+    (is (= 1 (count (:discard (get-corp)))) "Corp has 1 card in Archives")))
+
 (deftest oversight-ai-rez-at-no-cost
     ;; Rez at no cost
     (do-game

@@ -1,15 +1,17 @@
 COMPLETED WITH TESTS:
-  ONR "Drifter" Mobile Environment (tests pay to remove tags)
+  ONR "Drifter" Mobile Environment (2c to pay to remove tags/turn)
   ONR "Green Knight" Surge Buffers (prevents 1 net each turn (not necessarily the first))
-  ONR Accounts Receivable (see hedge fund)
+  ONR Accounts Receivable (hedge fund)
   ONR Afreet (MU and -str both work)
-  
+  ONR AI Chief Financial Officer (levy for the corp, on demand)
+  ONR Annual Reviews (draws 3)
+  ONR misc.for-sale (liquidation for the runner - trash cards to gain 3c each)
+  ONR MIT West Tier (levy AR Lab Access)
+
 PARTIALLY TESTED:
   ONR "Armadillo" Armored Road Home (tests removing tags, needs a prevent-meat test)
   
 NEEDS TESTS:
-ONR AI Chief Financial Officer (tests see levy AR lab access)
-ONR Annual Reviews (tests - see ANR Anonymous Tip)
 ONR Antiquated Interface Routines (tests - see midori, lag time)
 ONR Armored Fridge (tests - see plascrete)
 ONR Artemis 2020 (tests - see any console, multithreader)
@@ -104,11 +106,11 @@ ONR Management Shake-Up (audacity, but 3 counters, no discard)
 ONR Marine Arcology (that other double click for 3 card)
 ONR Mazer (end the run)
 ONR Militech MRAM Chip (+3 hand size, see beach party)
-101 	     (@LC-6)
+ONR AI Boon (Not sure how to test this one properly?)
+102 	     (@LC-6)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
-ONR AI Boon (Not sure how to test this one properly?) (TODO: Automate breaking)
 ONR City Surviellance (adjust for number of cards drawn, interrupt-rez needs to be better)
 ONR Ball and Chain (implementation doesn't do anything)
 ONR Core Command: Jettison Ice (choices credit is not functional right now)

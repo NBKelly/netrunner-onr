@@ -4425,7 +4425,6 @@
           (is (= 0 (get-strength (refresh marj)))
               "Afreet giving -1 strength to MarjanahBattering Ram")))))
 
-
 (deftest origami
   ;; Origami - Increases Runner max hand size
   (do-game

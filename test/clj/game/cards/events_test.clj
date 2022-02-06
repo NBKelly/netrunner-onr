@@ -4460,6 +4460,53 @@
       (click-prompt state :runner "Done")
       (is (zero? (count-tags state)) "Runner should avoid tag")))
 
+(deftest onr-misc.for-sale
+  ;; Fan Site should stayMarilyn Campaign
+  (do-game
+   (new-game {:runner {:hand ["ONR misc.for-sale", "Marjanah", "PAD Tap", "Fan Site"]}})
+   (take-credits state :corp)
+   (play-from-hand state :runner "Marjanah")
+   (play-from-hand state :runner "PAD Tap")
+   (play-from-hand state :runner "Fan Site")
+   (play-from-hand state :runner "ONR misc.for-sale")
+   (let [credits (:credit (get-runner))]
+     (click-card state :runner "PAD Tap")
+     (click-card state :runner "Fan Site")
+     (click-prompt state :runner "Done")
+     (is (installed? (get-program state 0)) "Marjanah still installed")
+     (is (= (+ credits 6) (:credit (get-runner))) "Runner gained 6 credits for trashing 2 cards"))))
+
+(deftest onr-mit-west-tier
+  ;; MIT West Tier
+  (do-game
+   (new-game {:corp {:deck [(qty "Hedge Fund" 5)]}
+              :runner {:deck ["Magnum Opus"]
+                       :hand ["ONR MIT West Tier" "Easy Mark"]
+                       :discard [(qty "Sure Gamble" 3)]}})
+   (take-credits state :corp)
+   (play-from-hand state :runner "ONR MIT West Tier")
+   (is (= 5 (count (:hand (get-runner)))) "Runner should draw 5 cards")
+   (is (zero? (count (:deck (get-runner)))) "Stack should be empty")
+   (is (zero? (count (:discard (get-runner)))) "Heap should be empty")
+   (is (= "ONR MIT West Tier" (:title (get-rfg state :runner 0))) "Levy should be rfg'd")))
+
+(deftest onr-mit-west-tier-heap-locked
+  ;; Heap Locked
+  (do-game
+   (new-game {:corp   {:deck [(qty "Hedge Fund" 5)]
+                       :hand ["Blacklist"]}
+              :runner {:deck ["Magnum Opus"]
+                       :hand ["ONR MIT West Tier" "Easy Mark"]
+                       :discard [(qty "Sure Gamble" 3)]}})
+   (play-from-hand state :corp "Blacklist" "New remote")
+   (rez state :corp (refresh (get-content state :remote1 0)))
+   (take-credits state :corp)
+   (play-from-hand state :runner "ONR MIT West Tier")
+   (is (= 2 (count (:hand (get-runner)))) "Runner should draw 2 cards")
+   (is (zero? (count (:deck (get-runner)))) "Stack should be empty")
+   (is (= 3 (count (:discard (get-runner)))) "Heap should have 3 cards")
+   (is (= "ONR MIT West Tier" (:title (get-rfg state :runner 0))) "Levy should be rfg'd")))
+
 (deftest out-of-the-ashes-happy-path
     ;; Happy Path
     (do-game

@@ -2360,7 +2360,29 @@
              :msg "take 1 brain damage"
              :effect (effect (damage eid :brain 1 {:unpreventable true
                                                    :card card}))}]})
+(defcard "ONR misc.for-sale"
+  {:on-play
+   {:req (req ;(some #(and (installed? %))
+                    (all-installed state :runner));)
+    :prompt "Choose any number of installed cards to trash"
+    :choices {:max (req (count (all-active-installed state :runner)))
+              :card #(and (installed? %)
+                          (runner? %))}
+    :msg (msg "trash " (string/join ", " (map :title targets))
+              " and gain " (* (count targets) 3) " [Credits]")
+    :async true
+    :effect (req (wait-for (trash-cards state side targets nil)
+                           (gain-credits state side eid (* (count targets) 3))))}})
 
+(defcard "ONR MIT West Tier"
+  {:on-play
+   {:msg (msg (if (not (zone-locked? state :runner :discard))
+                "shuffle their Grip and Heap into their Stack and draw 5 cards"
+                "shuffle their Grip into their Stack and draw 5 cards"))
+    :rfg-instead-of-trashing true
+    :async true
+    :effect (effect (shuffle-into-deck :hand :discard)
+                    (draw eid 5))}})
 
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"
