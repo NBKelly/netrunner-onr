@@ -2407,6 +2407,16 @@
         "Corp gains 7 credits from Offworld Office"
         (play-and-score state "Offworld Office"))))
 
+(deftest onr-ai-chief-financial-officer
+  ;; AI Chief Financial Officer
+  (do-game
+   (new-game {:corp {:hand [(qty "ONR AI Chief Financial Officer" 1)]
+                     :deck [(qty "Hedge Fund" 10)]}})
+   (play-and-score state "ONR AI Chief Financial Officer")   
+    (let [ai-scored (get-scored state :corp 0)]
+      (card-ability state :corp ai-scored 0)
+      (is (= 5 (count (:hand (get-corp)))) "Corp should have 5 cards in hand"))))      
+   
 (deftest orbital-superiority
   ;; Orbital Superiority
   (do-game
