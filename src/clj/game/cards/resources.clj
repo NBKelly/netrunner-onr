@@ -1959,6 +1959,19 @@
                                  ["Lose the game"]))}
                 card nil))})
 
+(defcard "ONR Nomad Allies"
+  {:interactions {:prevent [{:type #{:tag}
+                             :req (req true)}]}
+   :abilities [{:cost [:click 1 :credit 1]
+                :effect (effect (lose-tags eid 1))
+                :msg "remove 1 tag"
+                :label "remove tag"}
+               {:msg "avoid 1 tag"
+                :label "Avoid 1 tag"
+                :async true
+                :cost [:trash]
+                :effect (effect (tag-prevent :runner eid 1))}]})
+
 (defcard "Oracle May"
   {:abilities [{:cost [:click 1]
                 :label "name and reveal a card"

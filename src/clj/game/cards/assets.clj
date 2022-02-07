@@ -1676,6 +1676,32 @@
                                      (system-msg state :runner (:msg async-result))
                                      (effect-completed state side eid))
                            (end-run state :corp eid card)))}]})
+(defcard "ONR Olivia Salazar"
+  {:abilities [{
+                :once :per-run
+                :req (req (and this-server
+                               (pos? (count run-ices))))
+                :choices {:card #(and (installed? %)
+                                      (ice? %)
+                                      (not (rezzed? %))
+                                      )}
+                :label "rez an ice, paying half the cost"
+                :prompt "Choose an ice to rez, paying half the cost"
+                :async true
+                :effect (req (let [discount (- (rez-cost state side target)
+                                               (quot (rez-cost state side target) 2))
+                                   rezzed target]
+                               (do (system-msg state side "uses ONR Olivia Salazar to rez an ice")
+                                   (wait-for
+                                    (rez state side rezzed {:cost-bonus (- discount)})
+                                    (register-events
+                                     state side card
+                                     [{:event :run-ends
+                                       :duration :end-of-run
+                                       :async true
+                                       :effect (effect
+                                                (clear-wait-prompt :runner)
+                                                (derez rezzed))}])))))}]})
 
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw

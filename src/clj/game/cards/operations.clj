@@ -1554,6 +1554,9 @@
     :effect (req (wait-for (gain-credits state side 2)
                            (draw state side eid 1)))}})
 
+(defcard "ONR Off-Site Backups"
+  {:on-play (corp-recur)})
+
 (defcard "Falsified-Transactions Expert"
   {:on-play
    {:prompt "Choose an installed card you can advance"

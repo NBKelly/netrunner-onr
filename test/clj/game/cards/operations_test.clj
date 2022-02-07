@@ -2655,6 +2655,16 @@
     (is (= (+ 5 -1 +3) (:credit (get-corp))) "Corp should gain net 2 credits")
     (is (= 1 (count (:hand (get-corp)))) "Corp should draw 1 card")))
 
+(deftest onr-off-site-backups
+  ;; ONR Off-Site Backups
+  (do-game
+    (new-game {:corp {:deck [(qty "Hedge Fund" 5)]
+                      :hand ["ONR Off-Site Backups"]
+                      :discard ["Hostile Takeover"]}})
+    (play-from-hand state :corp "ONR Off-Site Backups")
+    (click-card state :corp "Hostile Takeover")
+    (is (= ["Hostile Takeover"] (->> (get-corp) :hand (map :title))) "Hostile Takeover should be in HQ")))
+
 (deftest oversight-ai-rez-at-no-cost
     ;; Rez at no cost
     (do-game

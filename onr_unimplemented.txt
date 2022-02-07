@@ -178,7 +178,6 @@ ONR Hunt Club BBS (expose 3)
   ONR Virus Test Site (2 net per advancement, or 1 net, except from archives)
   
 EASY:
-  ONR Nomad Allies (see forger)
   ONR Off-site Backups (archived memories)
   ONR On-Call Solo Team (private security force)
   ONR Open-Ended(R) Mileage Program (networking)

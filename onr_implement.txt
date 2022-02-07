@@ -19,8 +19,10 @@ COMPLETED WITH TESTS:
   ONR Newsgroup Filter (Gain 2c)
   ONR Newsgroup Taunting (pay 1 or ETR at the start of each run)
   ONR Night Shift (+2c, +1 card)
+  ONR Nomad Allies (avoid tag, remove tag)
+  ONR Off-site Backups (archived memories)
   
-  20  	       (@lc - 3)
+  22  	       (@lc - 3)
 PARTIALLY TESTED:
 
 UNTESTABLE:
@@ -120,14 +122,15 @@ ONR Marine Arcology (that other double click for 3 card)
 ONR Mazer (end the run)
 ONR Militech MRAM Chip (+3 hand size, see beach party)
 ONR AI Boon (Not sure how to test this one properly?)
-114 	     (@LC-9)
+116 	     (@LC-9)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
-ONR City Surviellance (adjust for number of cards drawn, interrupt-rez needs to be better)
+ONR City Surviellance (adjust for number of cards drawn, interrupt-rez needs to be better) - see corp-currently-drawing
 ONR Ball and Chain (implementation doesn't do anything)
 ONR Core Command: Jettison Ice (choices credit is not functional right now)
 ONR Encoder, Inc. (subroutine does not work)
 ONR Forgotten Backup Chip (Doesn't check there is a valid target first)
 ONR Nevinyrral (can't tell if derezzed or uninstalled - user needs to answer a prompt)
-8
+ONR Olivia Salazar (doesn't enforce ice is on her server)
+9

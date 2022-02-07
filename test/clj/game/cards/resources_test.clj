@@ -3767,6 +3767,32 @@
     (card-ability state :runner (get-resource state 0) 0)
     (is (= 2 (count (:discard (get-corp)))) "Two cards trashed from HQ")))
 
+(deftest onr-nomad-allies
+  ;; Decoy - Trash to avoid 1 tag
+  (do-game
+    (new-game {:corp {:deck ["SEA Source"]}
+               :runner {:hand ["ONR Nomad Allies"]}})
+    (take-credits state :corp)
+    (play-from-hand state :runner "ONR Nomad Allies")
+    (let [nom (get-resource state 0)]
+      (run-empty-server state :archives)
+      (gain-tags state :runner 1)
+      (click-prompt state :runner "Done")
+      (is (= 1 (count-tags state)))      
+      (changes-val-macro
+       -1 (:credit (get-runner))
+       "Spends 1 credit total to remove a tag"
+       (card-ability state :runner (refresh nom) 0)
+       (is (= 0 (count-tags state)) "tag removed" ))
+      (take-credits state :runner)
+      (play-from-hand state :corp "SEA Source")
+      (click-prompt state :corp "0")
+      (click-prompt state :runner "0")
+      (is (= 1 (count (:prompt (get-runner)))) "Runner prompted to avoid tag")
+      (card-ability state :runner (refresh nom) 1)
+      (is (= 1 (count (:discard (get-runner)))) "Nomad Allies trashed")
+      (is (zero? (count-tags state)) "Tag avoided"))))
+
 (deftest order-of-sol-get-down-to-zero-credits-from-playing-oos
     ;; Get down to zero credits from playing OoS
     (do-game
