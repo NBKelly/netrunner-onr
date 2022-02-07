@@ -1742,8 +1742,8 @@
                                            :index (card-index state card)})
                             (let [new-ice async-result]
                               (register-events
-                                state side card
-                                [{:event :run-ends
+                               state side card
+                               [{:event :run-ends
                                   :duration :end-of-run
                                   :async true
                                   :effect (effect (derez new-ice)
