@@ -2465,6 +2465,7 @@
 (defcard "Neural Katana"
   {:subroutines [(do-net-damage 3)]})
 
+
 (defcard "News Hound"
   (let [gain-sub {:req (req (and (= 1 (count (concat (:current corp) (:current runner))))
                                  (has-subtype? (:card context) "Current")))
@@ -2783,6 +2784,24 @@
 (defcard "ONR Nerve Labyrinth"
   {:subroutines [(do-net-damage 2)
                  end-the-run]})
+
+(defcard "ONR Neural Blade"
+  {:subroutines [(do-net-damage 2)
+                 {:msg "prevent the Runner from breaking subroutines on the next piece of ice they encounter this run"
+                  :effect
+                  (effect (register-events
+                           card
+                           [{:event :encounter-ice
+                             :duration :end-of-run
+                             :unregister-once-resolved true
+                             :msg (msg "prevent the runner from breaking subroutines on " (:title (:ice context)))
+                             :effect (effect (register-floating-effect
+                                              card
+                                              (let [encountered-ice (:ice context)]
+                                                {:type :cannot-break-subs-on-ice
+                                                 :duration :end-of-encounter
+                                                 :req (req (same-card? encountered-ice target))
+                                                 :value true})))}]))}]})
 
 (defcard "Orion"
   (space-ice trash-program-sub

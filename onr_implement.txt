@@ -15,8 +15,9 @@ COMPLETED WITH TESTS:
   ONR Nasuko Cycle (3 to avoid tag, nach but more busted)
   ONR Nerve Labyrinth (2 net, etr subs)
   ONR Netwatch Credit Voucher (give tag + gain cred if runner is tagged)
-
-  16  	       (@lc - 3)
+  ONR Nueral Blade (cannot break next subroutines)
+  
+  17  	       (@lc - 3)
 PARTIALLY TESTED:
 
 UNTESTABLE:
@@ -116,7 +117,7 @@ ONR Marine Arcology (that other double click for 3 card)
 ONR Mazer (end the run)
 ONR Militech MRAM Chip (+3 hand size, see beach party)
 ONR AI Boon (Not sure how to test this one properly?)
-110 	     (@LC-9)
+111 	     (@LC-9)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
@@ -125,5 +126,5 @@ ONR Ball and Chain (implementation doesn't do anything)
 ONR Core Command: Jettison Ice (choices credit is not functional right now)
 ONR Encoder, Inc. (subroutine does not work)
 ONR Forgotten Backup Chip (Doesn't check there is a valid target first)
-
-7
+ONR Nevinyrral (can't tell if derezzed or uninstalled - user needs to answer a prompt)
+8

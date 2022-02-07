@@ -1532,6 +1532,21 @@
     :effect (req (wait-for (gain-tags state :corp (make-eid state eid) 1)
                            (gain-credits state :corp eid 1)))}})
 
+(defcard "ONR New Blood"
+  (letfn [(es [] {:async true
+                  :prompt "Choose two pieces of ice to swap positions"
+                  :choices {:card #(and (installed? %)
+                                        (ice? %))
+                            :max 2}
+                  :effect (req (if (= (count targets) 2)
+                                 (do (swap-ice state side (first targets) (second targets))
+                                     (continue-ability state side (es) card nil))
+                                 (do (system-msg state side "has finished rearranging ice")
+                                     (effect-completed state side eid))))})]
+    {:on-play {:msg "rearrange installed ice"
+               :async true
+               :effect (effect (continue-ability (es) card nil))}}))
+
 (defcard "Falsified-Transactions Expert"
   {:on-play
    {:prompt "Choose an installed card you can advance"

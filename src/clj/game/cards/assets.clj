@@ -1646,6 +1646,23 @@
                 :async true
                 :effect (effect (gain-credits eid (* 4 (get-counters card :advancement))))}]})
 
+(defcard "ONR Nevinyrral"
+  {:in-play [:click-per-turn 1]
+   :implementation (str "in-play means installed. If a card is derezzed, it is still in play - you will need to answer a prompt when nevinyrral leaves play or is derezzed")
+   :leave-play (effect
+                (continue-ability
+                 {:player :corp
+                  :async false
+                  :waiting-prompt "Corp to choose an option"
+                  :prompt "Did Nevinryrral just get derezzed?"
+                  :req (req (rezzed? card))
+                  :choices ["Yes" "No"]
+                  :effect (req
+                           (when (= target "No")
+                             (do
+                               (system-msg state side "loses the game after Nevinyrral leaves play")
+                               (win state :runner "Nevinyrral left the building"))))}
+                 card nil))})
 
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw

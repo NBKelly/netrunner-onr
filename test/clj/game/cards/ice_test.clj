@@ -4483,6 +4483,46 @@
       (card-subroutine state :corp envl 1)
       (is (not (:run @state)) "Run ended"))))
 
+(deftest onr-neural-katana-cannot-break-subroutines-of-next-piece-of-ice
+   ;; Cannot break subroutines of next piece of ice
+    (do-game
+     (new-game {:corp {:deck [(qty "Hedge Fund" 5)]
+                       :hand ["ONR Neural Blade" "Ice Wall" "Cortex Lock"]
+                       :credits 30}
+                :runner {:hand [(qty "Sure Gamble" 5) "Bukhgalter" "Corroder"]
+                         :credits 20}})
+     (play-from-hand state :corp "Ice Wall" "HQ")
+     (play-from-hand state :corp "Cortex Lock" "HQ")
+     (play-from-hand state :corp "ONR Neural Blade" "HQ")
+     (take-credits state :corp)
+     (play-from-hand state :runner "Bukhgalter")
+     (play-from-hand state :runner "Corroder")
+     (let [katana (get-ice state :hq 2)
+           cortex-lock (get-ice state :hq 1)
+           ice-wall (get-ice state :hq 0)
+           bukhgalter (get-program state 0)
+           corroder (get-program state 1)]
+       (run-on state "HQ")
+       (rez state :corp katana)
+       (run-continue state)
+       (fire-subs state (refresh katana))
+       (run-continue-until state :approach-ice cortex-lock)
+       (rez state :corp cortex-lock)
+       (run-continue state)
+       ;; Inazuma subs prevented break on next piece of ice
+       (card-ability state :runner bukhgalter "Break 1 Sentry subroutine")
+       (is (no-prompt? state :runner) "Bukhgalter can't break so no prompt")
+       (changes-val-macro -2 (count (:hand (get-runner)))
+                          "2 net damage from Cortex Lock"
+                          (fire-subs state (refresh cortex-lock)))
+       ;; Next piece of ice is fine to break again
+       (run-continue-until state :approach-ice ice-wall)
+       (rez state :corp ice-wall)
+       (run-continue state)
+       (card-ability state :runner corroder 0)
+       (click-prompt state :runner "End the run")
+       (is (empty? (remove :broken (:subroutines (refresh ice-wall)))) "All subroutines broken"))))
+
 (deftest otoroshi
   ;; Otoroshi
   (do-game

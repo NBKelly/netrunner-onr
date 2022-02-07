@@ -116,7 +116,9 @@ RESTRICTED ACTIONS:
   ONR TKO 2.0 (end the run, runner forgoes next action)
   ONR Valu-Pak Software Bundle (gain 5 actions, onto to install programs, 1 credit available)
   ONR Wilson, Weeflerunner Apprentice (1 action to make run, 3c max spend, avoid tag, prevent meat)  
+
 NOISY:
+
   ONR Hammer (lose 2 credits from stealth per wall break)
   ONR Jackhammer (lose 1 credit from stealth per wall break)
   ONR Pile Driver (3: break 4 walls, 1:+1, -3 from stealth when breaking)
@@ -176,8 +178,6 @@ ONR Hunt Club BBS (expose 3)
   ONR Virus Test Site (2 net per advancement, or 1 net, except from archives)
   
 EASY:
-  ONR Nueral Blade (inazuma? cannot break next ice this run)
-  ONR Nevinyrral (director haas click/turn : :uninstalled - corp loses the game)
   ONR New Blood (escher, but the corp does it, and do not log swaps)
   ONR Newsgroup Filter (Magnum Opus)
   ONR Newsgroup Taunting (pay 1 or ETR at the start of each run)
@@ -291,5 +291,5 @@ EASY:
   ONR Pi in the 'Face (etr)
 
 continue from: base/Netwatch Credit Voucher
-scan from: base/SeeYa
+scan from: done
 
