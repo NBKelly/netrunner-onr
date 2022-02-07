@@ -2383,6 +2383,50 @@
     :async true
     :effect (effect (shuffle-into-deck :hand :discard)
                     (draw eid 5))}})
+(defcard "ONR Playful AI"
+    (letfn [(playful [n t r]
+              (if (> n 0)
+                {:msg (msg (str "play a round (" (dec n) " more rounds remaining) "))
+                 :effect (req (let [roll (inc (rand-int 6))]
+                                (continue-ability
+                                 state :runner
+                                 (if (> roll 3)
+                                   {:msg (msg "roll out (" roll ")")
+                                    :effect (req (continue-ability
+                                                    state side
+                                                    (playful (dec n) t (inc r))
+                                                    card nil))}
+                                   ;; choose to set aside or take credits
+                                   {:msg (msg "roll " roll " and must make choices")
+                                    :prompt (str "Set aside how many dice (you rolled " roll ")")
+                                    :waiting-prompt "waiting for runner to decide the stakes"
+                                    :choices (req [(when (= roll 3) "3")
+                                                   (when (> roll 1) "2")
+                                                   "1"
+                                                   "0"])
+                                    :effect (req (let [setaside (Integer/parseInt target)
+                                                       creds (- roll (Integer/parseInt target))]
+                                                   (do (when (pos? creds)
+                                                         (do (gain-credits state :runner eid creds)
+                                                             (system-msg
+                                                              state side
+                                                              (str "gains " creds
+                                                                   " from ONR Playful AI"))))
+                                                       (system-msg
+                                                        state side
+                                                        (str "sets aside " setaside " dice"))
+                                                       (continue-ability
+                                                        state side
+                                                        (playful (+ (dec n) setaside)
+                                                                 (+ t creds)
+                                                                 (inc r))
+                                                        card nil))))})
+                                 card nil)))}
+                {:msg (msg (str "gain a total of "t " [Credits] over " r " rolls"))}))]
+      {:on-play
+       {:async true
+        :effect (req (system-msg state side "decides to play with an AI")
+                     (continue-ability state side (playful 1 0 0) card nil))}}))
 
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"

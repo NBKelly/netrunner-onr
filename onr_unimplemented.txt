@@ -164,7 +164,7 @@ ONR Hunt Club BBS (expose 3)
   ONR Olivia Salazar (See that bioroid agenda that rezzes cards)
   ONR Omni Kismet, Ph. D. (see midori)
   ONR Omniscience Foundation (round end - if runner recieved a tag, give the runner a tag)
-  ONR Playful AI (? ? ? recursion hell: roll die, present number, ask how many to set aside: f(ai, set-aside))
+
   ONR Record Reconstructor (shuffle archives, put 2 random ontop of R&D)
   ONR Replicator (break ice sub with the word trace, +1 strength)
   ONR Speed Trap (may immediately jack out while an upgrade or asset is being rezzed)

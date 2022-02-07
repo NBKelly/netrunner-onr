@@ -18,6 +18,9 @@ COMPLETED WITH TESTS:
 
   16  	       (@lc - 3)
 PARTIALLY TESTED:
+
+UNTESTABLE:
+  ONR Playful AI
   
 NEEDS TESTS:
 ONR Artemis 2020 (tests - see any console, multithreader)
@@ -113,7 +116,7 @@ ONR Marine Arcology (that other double click for 3 card)
 ONR Mazer (end the run)
 ONR Militech MRAM Chip (+3 hand size, see beach party)
 ONR AI Boon (Not sure how to test this one properly?)
-109 	     (@LC-7)
+110 	     (@LC-9)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)
