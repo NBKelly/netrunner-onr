@@ -7,11 +7,14 @@ LINK CARDS:
   ONR Back Door to Orbital Air
   ONR Baedeker's Net Map
   ONR Bakdoor [TM]
-
+  ONR Submarine Uplink
+  
 FLOATING EFFECTS:
 
   ONR ACME Savings and Loan
   ONR Emergency Self-Construct (immune to meat, hand size, actions changed)
+  ONR Quest for Cattekin (probably doable - but a bit complicated)
+  ONR Security Net Optimization (add +1 strength to a server on score, see Diwan)
   
 PAY AGENDA POINTS:
 
@@ -39,6 +42,9 @@ ONR TOKEN CARDS:
   ONR I Spy
   ONR Incubator
   ONR Mastiff
+  ONR Pattel's Virus
+  ONR Pox
+  ONR Skivvis
   
 ODD CARDS:
 
@@ -53,7 +59,8 @@ ODD CARDS:
   ONR Microtech 'Trode Set (1 extra per breaking ice, ignore all AP subs except tracers and net, prevent all but 1 net from each ap subroutine)
   ONR Mystery Box (? ? ?)
   ONR Netspace Inverter (invert ice on a server directly after running it)
-
+  ONR Silver Lining Recovery Protocol (gain creds = 3x counter on stolen agendas last turn)
+  
 REQUIRES ONR TRACES:
 
   ONR Audit of Call Records (need to be able to count runs made last turn)
@@ -68,16 +75,36 @@ REQUIRES ONR TRACES:
   ONR Hunter (trace 5, tag)
   ONR Jack Attac
   ONR Krumz (1 credit for traces)
+  ONR Netwatch Operations Office
+  ONR Pandora's Deck
+  ONR PK-6089a
+  ONR Pocket Virtual Reality
+  ONR Private Cybernet Police
+  ONR Rabbit (max trace from ice -1)
+  ONR Rex
+  ONR Signpost (+2 link, after reveal)
+  ONR Stumble through Wilderspace
+  ONR Techtronica [TM] Utility Suit (1 mu, prevent 1 meat, 5c for link)
+  ONT The Springboard (+1 link, once, after reveal)
+  ONR Turbeau Delacroix
   
 REQUIRES REGION RULES:
 
   ONR Crystal Palace Station Grid (ref midway station)
   ONR Jerusalem City Grid (wall cost -2, +1 str)
   ONR Namatoki Plaza (? ??)
+  ONR New Galveston City Grid (+trash costs)
+  ONR Paris City Grid (3 for traces on this fort)
+  ONR Rio de Janeiro City Grid (roll die on ice passed, etr on 1)
+  ONR Roving Submarine (can only be run if a card was installed/invanced last turn)
+  ONR Singapore City Grid (swap ice once per run)
+  ONR Tokyo-Chiba Infighting (gain 2 if run fails on server)
+  ONR Washinton, D.C., City Grid (sansan city grid)
 
 NEATO Lookers:
 
-ONR N.E.T.O. (look at top x, pay 1 per prep/resource to bring to hand - find a generic way to do this)
+  ONR N.E.T.O. (look at top x, pay 1 per prep/resource to bring to hand - find a generic way to do this)
+  ONR Ronin Around (look at tip 5, 1 per hardware, show) - (a, 2: expose)
 
 RESTRICTED ACTIONS:
 
@@ -86,6 +113,14 @@ RESTRICTED ACTIONS:
   ONR Fang 2.0 (easy ice, disable run until ability used on breaker? floating effect?)
   ONR Haunting Inquisition (no run for 6 actions)
   ONR Japanese Water Torture (forgo actions on breaking)
+  ONR TKO 2.0 (end the run, runner forgoes next action)
+  ONR Valu-Pak Software Bundle (gain 5 actions, onto to install programs, 1 credit available)
+  ONR Wilson, Weeflerunner Apprentice (1 action to make run, 3c max spend, avoid tag, prevent meat)  
+NOISY:
+  ONR Hammer (lose 2 credits from stealth per wall break)
+  ONR Jackhammer (lose 1 credit from stealth per wall break)
+  ONR Pile Driver (3: break 4 walls, 1:+1, -3 from stealth when breaking)
+  ONR Ramming Piston (2 break wall, 1 str, -2 from stealth cards)
   
 DOABLE:
 
@@ -112,12 +147,11 @@ DOABLE:
   ONR Field Reporter for Ice and Data (corporate insider, but end of turn?)
   ONR Force Shield (prevent 2 net/brain)
   ONR Full Body Conversion (cost to do meat damage +1)
-  ONR Hammer (lose credits from stealth)
   ONR Hot Tip for WNS (gain 1 agenda point if black ops stolen)
   ONR Ice and Data's Guide to the Net (expose outmost on each server)
   ONR Ice Transmutation (choose an ICE, double subs, add 1 strength (permanently))
   ONR Investment Firm (Pad Campaign add credits card sort of)
-  ONR Jackhammer (lose credits from stealth)
+
   ONR Jenny Jett (this does exactly what mti mwekundo did, but costs)
   ONR Joan of Arc (prevent trash, add to hand like birds)
   ONR Junkyard BBS (requires trash ordered, bring top card of trash back)
@@ -125,16 +159,137 @@ DOABLE:
   ONR Microtech Backup Drive (whenever an installed program is trashed, you may add put it on TOP of microtech backup drive. You may spend an action to put the top card into hand)
 ONR Hunt Club BBS (expose 3)
   ONR If You Want It Done Right... (look at 5, add 1 to hand)
-  ONR Mantis, Fixer-at-Large (find a card from your stack)  
+  ONR Mantis, Fixer-at-Large (find a card from your stack)
+  
+  ONR Olivia Salazar (See that bioroid agenda that rezzes cards)
+  ONR Omni Kismet, Ph. D. (see midori)
+  ONR Omniscience Foundation (round end - if runner recieved a tag, give the runner a tag)
+  ONR Playful AI (? ? ? recursion hell: roll die, present number, ask how many to set aside: f(ai, set-aside))
+  ONR Record Reconstructor (shuffle archives, put 2 random ontop of R&D)
+  ONR Replicator (break ice sub with the word trace, +1 strength)
+  ONR Speed Trap (may immediately jack out while an upgrade or asset is being rezzed)
+  ONR Startup Immolator (that giest card + rubicon)
+  ONR Superior Net Barriers (reveal walls on score, gain creds = walls)
+  ONR Synchronized Attack on HQ (discard from hq, 2 per prevent)
+  ONR The Shell Traders (set aside, make a shell zone, otherwise personal workshop)
+  ONR Vacuum Link (roll die, on 1/2/3, runner moves out that many pieces of ICE or jacks out or to the outermost)
+  ONR Virus Test Site (2 net per advancement, or 1 net, except from archives)
+  
 EASY:
+  ONR Nueral Blade (inazuma? cannot break next ice this run)
+  ONR Nevinyrral (director haas click/turn : :uninstalled - corp loses the game)
+  ONR New Blood (escher, but the corp does it, and do not log swaps)
+  ONR Newsgroup Filter (Magnum Opus)
+  ONR Newsgroup Taunting (pay 1 or ETR at the start of each run)
+  ONR Night Shift (green level clearance)
+  ONR Nomad Allies (see forger)
+  ONR Off-site Backups (archived memories)
+  ONR On-Call Solo Team (private security force)
+  ONR Open-Ended(R) Mileage Program (networking)
+  ONR Organ Donar (freelance coding, do not retrict type)
+  ONR Overtime Incentives (Biotic Labor)
+  ONR Pacifica Regional AI (Hass Arcology AI, no turn limit)
+  ONR Parraline 5750 (+1mu, 1 credit for icebreakers during runs)
+  ONR Planning Consultants (psychokenisis? precognition?)
+  ONR Political Coup (regolith as an agenda - 12 credits)
+  ONR Political Overthrow (govt. takeover)
+  ONR Poltergeist (paricia)
+  ONR Polymer Breakthrough (PAD as an agenda)
+  ONR Power Grid Overload (trash x (tag) non-cybernetic hardware)
+  ONR Preying Mantis (Joshua B, but it's brain damage)
+  ONR Priority Requisition (pri req)
+  ONR Priority Wreck (Vamp)
+  ONR Private LDL Access (run hq, access R&D - see sneakdoor)
+  ONR Project Babylon (project beale, but count the difficulty)
+  ONR Project Consultants (place 4 counters - see audacity)
+  ONR Punitice Counterstrike (see traffic accident)
+  ONR Quandary (see quandary)
+  ONR R&D Interface (as anr)
+  ONR R&D-Protocol Files (run R&D, see top 5 cards)
+  ONR Raffles (code gate: 1 break, 2 boost)
+  ONR Raptor (2 sentry, 1 boost)
+  ONR Raven Microcyb Eagle (1 mu, prevent 1 net, 1 cred/runs only)
+  ONR Raven Microcyb Owl (1 mu, 3 for runs)
+  ONR Razor Wire (2 net, etr)
+  ONR Red Herrings (see anr)
+  ONR Reflector (break stun, hellbolt, knockout subs)
+  ONR Reinforced Wall (etr, etr)
+  ONR Remote Facility (see haas, action each turn)
+  ONR Rescheduler (see corporate shuffle)
+  ONR Restrictive Net Zoning (see diwan, ice only)
+  ONR Rigged Investments (casts, 12, 1 take)
+  ONR Rock is Strong (etr)  
+  ONR Rockerboy Promotion (regolith)
+  ONR Romp through HQ (demolition run, HQ)
+  ONR Rustbelt HQ Branch (hand size +2)
+  ONR Scatter Shot (paricia, but upgrades)
+  ONR Schlaghund (roll die, if less than num-tags, nuke the runner with 10 meat)
+  ONR Scorched Earth (scorched earth)
+  ONR Score! (Sure Gamble)
+  ONR Scrable (etr)
+  ONR Security Code WORM Chip (trash unrezzed ice, succ run HQ)
+  ONR Security Purge (ABT, but reveal to the runner)
+  ONR SeeYa (a/1: expose card)
+  ONR Self-Modifying Code (smc, but no cred cost)
+  ONR Snetinels Prime (rototurret)
+  ONR Setup! (shock, but 2, not in archives)
+  ONR Shaka (1 break sentry, 2 +1 str)
+  ONR Shield (prevent 2 net/turn)
+  ONR Shock.r (inazuma, but single sub)
+  ONR Short-Term Contract (armitage codebusting)
+  ONR Shotgun Wirte (2 net, ETR)
+  ONR Shredder Uplink Protocol (sneakdoor beta)
+  ONR Silicon Saloon Franchise (proco)
+  ONR Skälderviken SA Beta Test Site (-2 cost black ice)
+  ONR Sleeper (etr)
+  ONR Smarteye (snitch)
+  ONR Smith's Pawnshop (aesops, but 2c)
+  ONR Sneak Preview (test run, but into HQ)
+  ONR Snowball (anr snowball, but killer)
+  ONR Social Engineering (at least 2, rigged results, keep unless corp guesses right)
+  ONR Solo Squad (private security force, asset)
+  ONR South African Mining Corp (that 3 click-6 card)
+  ONR Spinn (R) Public Relations (marked accounts)
+  ONR Strike Force Kali (2 meat if runner is tagged, action)
+  ONR Subsidiary Branch (+1 action/turn)
+  ONR Succubus (leprechaun)
+  ONR Systematic Layoffs (audacity, no discard)
+  ONR Team Restructuring (shipment from Kaguya)
+  ONR Technician Lover (A: look at top of R&D)
+  ONR Temple Microcode Outlet (search stack for a program, reveal it: see logos)
+  ONR Terrorist Reprisal (if corp scored a BLOPS agenda, force 5 random discards)
+  ONR Tesseract For Construction (all ice has on this fort has "ETR unless the runner pays 1")
+  ONR The Short Circuit (a, 1: search stack for program, reveal)
+  ONR Tinweasel (0: break code gate)
+  ONR Too Many Doors (etr unless runner withs psi game (0,1,2))
+  ONR Top Runner's Conference (rezeki x 2, trash when you run)
+  ONR Total Genetic Retrofit (lawyer up - remove all tags, avoid next tag - see that bike)
+  ONR TRAP! (Snare!)
+  ONR Trauma Team [TM] (2 counters, prevent meat, action to add counter)
+  ONR Triggerman (rototurret)
+  ONR Trojan Horse (tag if stolen agenda last turn)
+  ONR Tutor (all ice has "etr" after subroutines until end of run)
+  ONR Twenty-Four-Hour Surveillance (runner cannot use stealth)
+  ONR Tycho Extension (blank)
+  ONR Tycho Mem Chip (+3mu)
+  ONR Umbrella Policy (prevent program or hardware being trashed)
+  ONR Urban Renewal (do 5 meat if tagged)
+  ONR Vacant Soulkiller (advance before/after rez, 1 brain per counter: see overwriter)
+  ONR Vapor Ops (counter: gain 1, a: move counters to another card)
+  ONR Vewy Vewy Quiet (2c for stealth)
+  ONR Virizz (sub: +1 cost to break ce subs)
+  ONR Wall of Ice (2 net, 2 net, etr, etr)
+  ONR Wall of Static (etr)
+  ONR Weather-to-Finance Pipe (run hq, corp loses 4)
+  ONR Wild Card (0: beak sentry, 3: +1 str)
+  ONR Wizard's Book (0: break gate, 2: +1)
+  ONR Worm (0: wall, 3:+1)
+  ONR WuTech Mem Chip (+1 mu)
+  ONR Zetatech Software Installer (2 for installing programs, see sahasrara)
+  ONR Zombie (1 brain, 1 brain, etr)
+  ONR ZZ22 Speed Chip (2c for killers/turn)
+  ONR Pi in the 'Face (etr)
 
-ONR Nasuko Cycle (3 to avoid tag)
-ONR Nerve Labyrinth (Envelope + 1)
-ONR Netwatch Credit Voucher (big brother, 1 tag 1 cred)
-
-
-
-
-continue from: base/Fortress Architects
-scan from: base/Netwatch Credit Voucher
+continue from: base/Netwatch Credit Voucher
+scan from: base/SeeYa
 
