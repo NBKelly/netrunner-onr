@@ -1664,6 +1664,19 @@
                                (win state :runner "Nevinyrral left the building"))))}
                  card nil))})
 
+(defcard "ONR Newsgroup Taunting"
+  {:events [{:event :run
+            :async true
+            :msg (msg "force the Runner to " (decapitalize target))
+            :player :runner
+            :prompt "Pay 1 [Credits] or end the run?"
+            :choices ["Pay 1 [Credits]" "End the run"]
+            :effect (req (if (= target "Pay 1 [Credits]")
+                           (wait-for (pay state :runner (make-eid state eid) card :credit 1)
+                                     (system-msg state :runner (:msg async-result))
+                                     (effect-completed state side eid))
+                           (end-run state :corp eid card)))}]})
+
 (defcard "Open Forum"
   {:events [{:event :corp-mandatory-draw
              :interactive (req true)

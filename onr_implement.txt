@@ -16,8 +16,11 @@ COMPLETED WITH TESTS:
   ONR Nerve Labyrinth (2 net, etr subs)
   ONR Netwatch Credit Voucher (give tag + gain cred if runner is tagged)
   ONR Nueral Blade (cannot break next subroutines)
+  ONR Newsgroup Filter (Gain 2c)
+  ONR Newsgroup Taunting (pay 1 or ETR at the start of each run)
+  ONR Night Shift (+2c, +1 card)
   
-  17  	       (@lc - 3)
+  20  	       (@lc - 3)
 PARTIALLY TESTED:
 
 UNTESTABLE:
@@ -117,7 +120,7 @@ ONR Marine Arcology (that other double click for 3 card)
 ONR Mazer (end the run)
 ONR Militech MRAM Chip (+3 hand size, see beach party)
 ONR AI Boon (Not sure how to test this one properly?)
-111 	     (@LC-9)
+114 	     (@LC-9)
 
 PARTIAL IMPLEMENTATIONS:
 ONR Anonymous Tip (set choices - require black ice exists to play)

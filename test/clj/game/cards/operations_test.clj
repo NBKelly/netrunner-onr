@@ -2646,6 +2646,15 @@
     (is (= 2 (count-tags state)) "Runner gained a tag")
     (is (= 6 (:credit (get-corp))) "Gained 1c from credit voucher")))
 
+(deftest onr-night-shift
+  ;; ONR Night Shift
+  (do-game
+    (new-game {:corp {:deck [(qty "Hedge Fund" 5)]
+                      :hand ["ONR Night Shift"]}})
+    (play-from-hand state :corp "ONR Night Shift")
+    (is (= (+ 5 -1 +3) (:credit (get-corp))) "Corp should gain net 2 credits")
+    (is (= 1 (count (:hand (get-corp)))) "Corp should draw 1 card")))
+
 (deftest oversight-ai-rez-at-no-cost
     ;; Rez at no cost
     (do-game

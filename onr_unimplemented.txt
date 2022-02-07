@@ -178,10 +178,6 @@ ONR Hunt Club BBS (expose 3)
   ONR Virus Test Site (2 net per advancement, or 1 net, except from archives)
   
 EASY:
-  ONR New Blood (escher, but the corp does it, and do not log swaps)
-  ONR Newsgroup Filter (Magnum Opus)
-  ONR Newsgroup Taunting (pay 1 or ETR at the start of each run)
-  ONR Night Shift (green level clearance)
   ONR Nomad Allies (see forger)
   ONR Off-site Backups (archived memories)
   ONR On-Call Solo Team (private security force)

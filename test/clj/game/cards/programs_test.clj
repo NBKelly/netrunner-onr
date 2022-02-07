@@ -4442,7 +4442,19 @@
        (is (not (no-prompt? state :runner)) "Mouse exposed the rezzed card")
        (click-card state :runner pad)
        (is (no-prompt? state :runner) "Mouse should expose PAD Campaign")))))
-                            
+
+(deftest onr-newsgroup-filter
+  ;; Newsgroup Filter
+  (do-game
+    (new-game {:runner {:deck ["ONR Newsgroup Filter"]}})
+    (take-credits state :corp)
+    (play-from-hand state :runner "ONR Newsgroup Filter")
+    (is (= 2 (core/available-mu state)))
+    (is (zero? (:credit (get-runner))))
+    (let [mopus (get-program state 0)]
+      (card-ability state :runner mopus 0)
+      (is (= 2 (:credit (get-runner))) "Gain 2cr"))))
+
 (deftest origami
   ;; Origami - Increases Runner max hand size
   (do-game

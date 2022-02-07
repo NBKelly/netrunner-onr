@@ -3410,6 +3410,22 @@
           "Drew 2 cards -> mandatory + nico trash effect"
           (take-credits state :runner)))))
 
+(deftest onr-newsgroup-taunting
+  ;; onr Newsgroup Taunting
+  (do-game
+   (new-game {:corp {:hand ["ONR Newsgroup Taunting"]}})
+   (play-from-hand state :corp "ONR Newsgroup Taunting" "New remote")
+   (let [news (get-content state :remote1 0)]
+     (rez state :corp news)
+     (take-credits state :corp)
+     (run-on state :hq)
+     (click-prompt state :runner "End the run")
+     (is (not (:run @state)) "Newsground ends the run")
+     (run-on state :rd)
+     (changes-val-macro -1 (:credit (get-runner))
+                        "Runner paid 1 credit"
+                        (click-prompt state :runner "Pay 1 [Credits]")))))
+
 (deftest open-forum
   ;; Open Forum
   (do-game

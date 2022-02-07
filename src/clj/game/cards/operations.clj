@@ -1547,6 +1547,13 @@
                :async true
                :effect (effect (continue-ability (es) card nil))}}))
 
+(defcard "ONR Night Shift"
+  {:on-play
+   {:msg "gain 2 [Credits] and draw 1 card"
+    :async true
+    :effect (req (wait-for (gain-credits state side 2)
+                           (draw state side eid 1)))}})
+
 (defcard "Falsified-Transactions Expert"
   {:on-play
    {:prompt "Choose an installed card you can advance"

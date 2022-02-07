@@ -1985,6 +1985,14 @@
                 :effect (effect (expose eid target))
                 :msg "expose a card inside a fort"}]})
 
+(defcard "ONR Newsgroup Filter"
+  {:abilities [{:cost [:click 1]
+                :keep-open :while-clicks-left
+                :async true
+                :effect (effect (gain-credits eid 2))
+                :msg "gain 2 [Credits]"}]})
+
+
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
                                  1 1 "All"
