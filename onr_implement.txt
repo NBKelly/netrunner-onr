@@ -133,4 +133,10 @@ ONR Encoder, Inc. (subroutine does not work)
 ONR Forgotten Backup Chip (Doesn't check there is a valid target first)
 ONR Nevinyrral (can't tell if derezzed or uninstalled - user needs to answer a prompt)
 ONR Olivia Salazar (doesn't enforce ice is on her server)
+
+STEALTH - ability appears behind ice subroutines:
+  ONR Hammer (lose 2 credits from stealth per wall break)
+  ONR Jackhammer (lose 1 credit from stealth per wall break)
+  ONR Pile Driver (3: break 4 walls, 1:+1, -3 from stealth when breaking) - ability fires per sub broken (oh no)
+  ONR Ramming Piston (2 break wall, 1 str, -2 from stealth cards)
 9

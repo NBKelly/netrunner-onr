@@ -238,6 +238,47 @@
                                             (has-subtype? current-ice (:breaks break))))})
                  pump]}))
 
+(defn- initiate-stealth-loss
+  "Initiate the process of losing x from stealth cards
+  (Noisy Breakers)"
+  [amt]
+  {:additional-ability
+   {:msg (str "lose " amt " credits from stealth cards")
+    :req (req (some #(and (has-subtype? % "Stealth")
+                          (installed? %)
+                          (or (< 0 (get-counters % :recurring))
+                              (< 0 (get-counters % :credit))))
+                    (all-installed state :runner)))
+    :effect (effect (continue-ability
+                     (lose-from-stealth amt 0)
+                  card nil))}})
+
+(defn- lose-from-stealth
+  "Lose x credits from stealth cards
+  (Noisy breakers)"
+  ([creds total]  
+  (if (> creds 0)
+    {:prompt  "Choose a stealth card to lose a 1 [Recurring Credits]"
+     :priority 99
+     :req (req (some #(and (has-subtype? % "Stealth")
+                           (installed? %)
+                           (< 0 (get-counters % :recurring)))
+                      (all-installed state :runner)))
+     :choices {:card #(and (< 0 (get-counters % :recurring))
+                           (has-subtype? % "Stealth")
+                           (installed? %))}
+     :interactive (req true)
+     :async true
+     :msg (msg "lose 1 [Recurring Credits] on " (:title target))
+     :effect (effect (do
+                       (add-counter state side target :recurring (- 1))
+                       (continue-ability
+                        state side
+                        (lose-from-stealth (dec creds) (inc total))
+                        card nil)))})))
+;     }))
+                    
+
 (defn- return-and-derez
   "Return to grip to derez current ice
   (Bird suite: Golden, Peregrine, Saker)"
@@ -1992,6 +2033,23 @@
                 :effect (effect (gain-credits eid 2))
                 :msg "gain 2 [Credits]"}]})
 
+(defcard "ONR Hammer"
+  (auto-icebreaker {:abilities [(strength-pump 1 1)
+                                (break-sub 1 1 "Wall"                                           
+                                        (initiate-stealth-loss 2)
+                                           )]}))
+
+(defcard "ONR Jackhammer"
+  (auto-icebreaker {:abilities [(strength-pump 1 1)
+                                (break-sub 0 1 "Wall" (initiate-stealth-loss 1))]}))
+
+(defcard "ONR Pile Driver"
+  (auto-icebreaker {:abilities [(strength-pump 1 1)
+                                (break-sub 3 4 "Wall" (initiate-stealth-loss 3))]}))
+
+(defcard "ONR Ramming Piston"
+  (auto-icebreaker {:abilities [(strength-pump 1 1)
+                                (break-sub 2 1 "Wall" (initiate-stealth-loss 2))]}))
 
 (defcard "Omega"
   (auto-icebreaker {:abilities [(break-sub
