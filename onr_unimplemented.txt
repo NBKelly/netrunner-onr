@@ -116,13 +116,6 @@ RESTRICTED ACTIONS:
   ONR TKO 2.0 (end the run, runner forgoes next action)
   ONR Valu-Pak Software Bundle (gain 5 actions, onto to install programs, 1 credit available)
   ONR Wilson, Weeflerunner Apprentice (1 action to make run, 3c max spend, avoid tag, prevent meat)  
-
-NOISY:
-
-  ONR Hammer (lose 2 credits from stealth per wall break)
-  ONR Jackhammer (lose 1 credit from stealth per wall break)
-  ONR Pile Driver (3: break 4 walls, 1:+1, -3 from stealth when breaking)
-  ONR Ramming Piston (2 break wall, 1 str, -2 from stealth cards)
   
 DOABLE:
 
@@ -159,7 +152,7 @@ DOABLE:
   ONR Junkyard BBS (requires trash ordered, bring top card of trash back)
   ONR Microtech AI Interface (before access, cut any number of cards to the bottom or R&D)
   ONR Microtech Backup Drive (whenever an installed program is trashed, you may add put it on TOP of microtech backup drive. You may spend an action to put the top card into hand)
-ONR Hunt Club BBS (expose 3)
+  ONR Hunt Club BBS (expose 3)
   ONR If You Want It Done Right... (look at 5, add 1 to hand)
   ONR Mantis, Fixer-at-Large (find a card from your stack)
   
@@ -178,10 +171,6 @@ ONR Hunt Club BBS (expose 3)
   ONR Virus Test Site (2 net per advancement, or 1 net, except from archives)
   
 EASY:
-  ONR On-Call Solo Team (private security force)
-  ONR Open-Ended(R) Mileage Program (networking)
-  ONR Organ Donar (freelance coding, do not retrict type)
-  ONR Overtime Incentives (Biotic Labor)
   ONR Pacifica Regional AI (Hass Arcology AI, no turn limit)
   ONR Parraline 5750 (+1mu, 1 credit for icebreakers during runs)
   ONR Planning Consultants (psychokenisis? precognition?)

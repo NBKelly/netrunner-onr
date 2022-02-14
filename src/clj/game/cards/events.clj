@@ -2383,6 +2383,7 @@
     :async true
     :effect (effect (shuffle-into-deck :hand :discard)
                     (draw eid 5))}})
+
 (defcard "ONR Playful AI"
     (letfn [(playful [n t r]
               (if (> n 0)
@@ -2427,6 +2428,33 @@
        {:async true
         :effect (req (system-msg state side "decides to play with an AI")
                      (continue-ability state side (playful 1 0 0) card nil))}}))
+
+(defcard "ONR Open-Ended(R) Mileage Program"
+  {:on-play
+   {:async true
+    :req (req (pos? (count-real-tags state)))
+    :msg "remove 1 tag"
+    :effect (req (wait-for (lose-tags state side 1)
+                           (continue-ability
+                             state side
+                             {:optional
+                              {:prompt "ONR Open-Ended(R) Mileage Program to Grip?"
+                               :yes-ability
+                               {:cost [:credit 1]
+                                :msg "add it to their Grip"
+                                :effect (effect (move card :hand))}}}
+                             card nil)))}})
+
+(defcard "ONR Organ Donor"
+  {:on-play
+   {:choices {:max 5
+              :card #(in-hand? %)}
+    :msg (msg "trash " (string/join ", " (map :title targets)) " and gain "
+              (* 2 (count targets)) " [Credits]")
+    :async true
+    :effect (req (wait-for (trash-cards state side targets {:unpreventable true})
+                           (gain-credits state side eid (* 2 (count targets)))))}})
+
 
 (defcard "Out of the Ashes"
   (let [ashes-run {:prompt "Choose a server"

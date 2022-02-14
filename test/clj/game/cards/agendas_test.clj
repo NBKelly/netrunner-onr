@@ -2416,7 +2416,23 @@
     (let [ai-scored (get-scored state :corp 0)]
       (card-ability state :corp ai-scored 0)
       (is (= 5 (count (:hand (get-corp)))) "Corp should have 5 cards in hand"))))      
-   
+
+(deftest onr-on-call-solo-team
+  ;; Private Security Force
+  (do-game
+    (new-game {:corp {:deck [(qty "ONR On-Call Solo Team" 10)]}})
+    (gain-tags state :runner 1)
+    (play-and-score state "ONR On-Call Solo Team")
+    (let [psf-scored (get-scored state :corp 0)]
+      (card-ability state :corp psf-scored 0)
+      (is (= 1 (count (:discard (get-runner)))))
+      (take-credits state :runner)
+      (dotimes [_ 3]
+        (card-ability state :corp psf-scored 0))
+      (is (= 3 (count (:discard (get-runner)))))
+      (is (= :corp (:winner @state)) "Corp wins")
+      (is (= "Flatline" (:reason @state)) "Win condition reports flatline"))))
+
 (deftest orbital-superiority
   ;; Orbital Superiority
   (do-game

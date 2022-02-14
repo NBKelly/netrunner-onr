@@ -4362,6 +4362,7 @@
       (is (= 1 (count (:discard (get-runner)))) "Runner's discard should be empty")
       (is (= "Networking" (-> (get-runner) :discard first :title)) "Networking should be in heap"))))
 
+
 (deftest notoriety
   ;; Notoriety - Run all 3 central servers successfully and play to gain 1 agenda point
   (do-game
@@ -4506,6 +4507,43 @@
    (is (zero? (count (:deck (get-runner)))) "Stack should be empty")
    (is (= 3 (count (:discard (get-runner)))) "Heap should have 3 cards")
    (is (= "ONR MIT West Tier" (:title (get-rfg state :runner 0))) "Levy should be rfg'd")))
+
+(deftest onr-open-ended-mileage
+  ;; Networking
+  (do-game
+    (new-game {:corp {:deck [(qty "Hedge Fund" 5)]}
+               :runner {:hand ["ONR Open-Ended(R) Mileage Program"]}})
+    (take-credits state :corp)
+    (play-from-hand state :runner "ONR Open-Ended(R) Mileage Program")
+    (is (= "ONR Open-Ended(R) Mileage Program" (-> (get-runner) :hand first :title)) "Networking shouldn't be played")
+    (gain-tags state :runner 4)
+    (let [credits (:credit (get-runner))]
+      (play-from-hand state :runner "ONR Open-Ended(R) Mileage Program")
+      (is (= 3 (count-tags state)) "Runner should lose 1 tag")
+      (click-prompt state :runner "Yes")
+      (is (= (dec credits) (:credit (get-runner))) "Runner should spend 1 on OEMP ability")
+      (is (zero? (count (:discard (get-runner)))) "Runner's discard should be empty")
+      (is (= "ONR Open-Ended(R) Mileage Program" (-> (get-runner) :hand first :title))))
+    (let [credits (:credit (get-runner))]
+      (play-from-hand state :runner "ONR Open-Ended(R) Mileage Program")
+      (is (= 2 (count-tags state)) "Runner should lose 1 tag")
+      (click-prompt state :runner "No")
+      (is (= credits (:credit (get-runner))) "Runner should spend 1 on Networking ability")
+      (is (= 1 (count (:discard (get-runner)))) "Runner's discard should be empty")
+      (is (= "ONR Open-Ended(R) Mileage Program" (-> (get-runner) :discard first :title)) "OEMP should be in heap"))))
+
+(deftest onr-organ-donor
+  ;; Freelance Coding Contract - Gain 2 credits per program trashed from Grip
+  (do-game
+    (new-game {:runner {:deck ["ONR Organ Donor"
+                               "Paricia" "Cloak" "Apocalypse"]}})
+    (take-credits state :corp)
+    (play-from-hand state :runner "ONR Organ Donor")
+    (click-card state :runner (find-card "Cloak" (:hand (get-runner))))
+    (click-card state :runner (find-card "Paricia" (:hand (get-runner))))
+    (click-card state :runner (find-card "Apocalypse" (:hand (get-runner))))
+    (click-prompt state :runner "Done")
+    (is (= 11 (:credit (get-runner))) "Gained 6 credits from 3 trashed cards")))
 
 (deftest out-of-the-ashes-happy-path
     ;; Happy Path

@@ -1557,6 +1557,11 @@
 (defcard "ONR Off-Site Backups"
   {:on-play (corp-recur)})
 
+(defcard "ONR Overtime Incentives"
+  {:on-play
+   {:msg "gain [Click][Click]"
+    :effect (effect (gain-clicks 2))}})
+
 (defcard "Falsified-Transactions Expert"
   {:on-play
    {:prompt "Choose an installed card you can advance"

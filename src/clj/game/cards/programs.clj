@@ -238,20 +238,19 @@
                                             (has-subtype? current-ice (:breaks break))))})
                  pump]}))
 
-(defn- initiate-stealth-loss
-  "Initiate the process of losing x from stealth cards
-  (Noisy Breakers)"
-  [amt]
-  {:additional-ability
-   {:msg (str "lose " amt " credits from stealth cards")
-    :req (req (some #(and (has-subtype? % "Stealth")
-                          (installed? %)
-                          (or (< 0 (get-counters % :recurring))
-                              (< 0 (get-counters % :credit))))
-                    (all-installed state :runner)))
-    :effect (effect (continue-ability
-                     (lose-from-stealth amt 0)
-                  card nil))}})
+(defn- stealth-loss-2
+  [creds]
+  {:prompt "Choose a card to lose a credit"
+   :async true
+   :priority 10
+   :interactive (req true)
+   :choices {:card #(and (< 0 (get-counters % :recurring))
+                         (has-subtype? % "Stealth")
+                         (installed? %))}
+   :msg (msg "lose 1 [Credits] from " (:title target))
+   :effect (effect
+            (add-counter target :recurring (- 1))
+            (effect-completed eid))})
 
 (defn- lose-from-stealth
   "Lose x credits from stealth cards
@@ -259,25 +258,44 @@
   ([creds total]  
   (if (> creds 0)
     {:prompt  "Choose a stealth card to lose a 1 [Recurring Credits]"
-     :priority 99
-     :req (req (some #(and (has-subtype? % "Stealth")
-                           (installed? %)
-                           (< 0 (get-counters % :recurring)))
-                      (all-installed state :runner)))
+     :priority 10
+     :async true
+     ;:req (req (some #(and (has-subtype? % "Stealth")
+     ;                      (installed? %)
+     ;                      (< 0 (get-counters % :recurring)))
+     ;                 (all-installed state :runner)))
      :choices {:card #(and (< 0 (get-counters % :recurring))
                            (has-subtype? % "Stealth")
                            (installed? %))}
      :interactive (req true)
-     :async true
-     :msg (msg "lose 1 [Recurring Credits] on " (:title target))
-     :effect (effect (do
-                       (add-counter state side target :recurring (- 1))
-                       (continue-ability
-                        state side
-                        (lose-from-stealth (dec creds) (inc total))
-                        card nil)))})))
-;     }))
-                    
+     :msg (msg "lose 1 [Recurring Credits] from " (:title target))
+     :effect (effect
+              (add-counter target :recurring (- 1))
+              (continue-ability
+               ;state side
+               (lose-from-stealth (dec creds) (inc total))
+               card nil)
+              (effect-completed eid))})))
+
+(defn- initiate-stealth-loss
+  "Initiate the process of losing x from stealth cards
+  (Noisy Breakers)"
+  [amt]
+  {:async true
+   :additional-ability   
+   {:msg (str "lose " amt " credits from stealth cards")
+    :async true
+    :req (req (some #(and (has-subtype? % "Stealth")
+                          (installed? %)
+                          (or (< 0 (get-counters % :recurring))
+                              (< 0 (get-counters % :credit))))
+                    (all-installed state :runner)))
+    :effect (effect
+             (continue-ability
+              (lose-from-stealth amt 0)
+              card nil)
+             (effect-completed eid))
+             }})
 
 (defn- return-and-derez
   "Return to grip to derez current ice
@@ -2034,10 +2052,12 @@
                 :msg "gain 2 [Credits]"}]})
 
 (defcard "ONR Hammer"
-  (auto-icebreaker {:abilities [(strength-pump 1 1)
-                                (break-sub 1 1 "Wall"                                           
-                                        (initiate-stealth-loss 2)
-                                           )]}))
+;  (auto-icebreaker
+   {:abilities [(strength-pump 1 1)
+                (break-sub 1 1 "Wall"
+                           ;(stealth-loss-2 2)
+                           {:additional-ability (stealth-loss-2 2)}
+                           )]})
 
 (defcard "ONR Jackhammer"
   (auto-icebreaker {:abilities [(strength-pump 1 1)

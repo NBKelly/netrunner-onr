@@ -2665,6 +2665,14 @@
     (click-card state :corp "Hostile Takeover")
     (is (= ["Hostile Takeover"] (->> (get-corp) :hand (map :title))) "Hostile Takeover should be in HQ")))
 
+(deftest onr-overtime-incentives
+  ;; Overtime Incentives - Gain 2 clicks
+  (do-game
+    (new-game {:corp {:deck ["ONR Overtime Incentives"]}})
+    (play-from-hand state :corp "ONR Overtime Incentives")
+    (is (= 1 (:credit (get-corp))))
+    (is (= 4 (:click (get-corp))) "Spent 1 click to gain 2 additional clicks")))
+
 (deftest oversight-ai-rez-at-no-cost
     ;; Rez at no cost
     (do-game

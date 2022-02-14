@@ -1256,6 +1256,12 @@
                 :keep-open :while-2-clicks-left
                 :effect (effect (gain-credits eid 3))}]})
 
+(defcard "ONR On-Call Solo Team"
+  {:abilities [{:req (req tagged)
+                :cost [:click 1]
+                :keep-open :while-clicks-left
+                :effect (effect (damage eid :meat 1 {:card card}))
+                :msg "do 1 meat damage"}]})
 
 (defcard "Paper Trail"
   {:on-score
